@@ -31,7 +31,7 @@
         <p class="card__name"><span>Privacy</span><br>Coins</p>
 
 
-        <div id="app">
+        <div id="privCoins">
               <table class="table">
                 <thead>
                   <tr>
@@ -42,8 +42,8 @@
                     <td>1D</td>
                 </thead>
                 <tbody>
-                  <tr v-cloak v-for="coin in coins">
-                    <td><img v-bind:src="getCoinImage('XMR')"> {{ }}</td>
+                  <tr v-cloak v-for="coin in privCoins">
+                    <td><img v-bind:src="getCoinImage(coin.symbol)"> {{ }}</td>
                     <td>{{ coin.symbol }}</td>
                     <td>{{ coin.price_usd | currency }}</td>
                     <!--<td v-bind:style="getColor(coin.percent_change_1h)">
@@ -124,7 +124,7 @@
         <p class="card__name"><span>Proof of</span><br>Stake</p>
 
 
-        <div id="app">
+        <div>
               <table class="table table-hover">
                 <thead>
                   <tr>

@@ -8,7 +8,7 @@
 // (including logo images). The service can be found at:
 // https://www.cryptocompare.com/api/
 let CRYPTOCOMPARE_API_URI = "https://min-api.cryptocompare.com";
-let CRYPTOCOMPARE_URI = "https://www.cryptocompare.com";
+let CRYPTOCOMPARE_URI = "https://www.cryptocompare.com/";
 
 // The API we're using for grabbing cryptocurrency prices.  The service can be
 // found at: https://coinmarketcap.com/api/
@@ -18,17 +18,17 @@ let COINMARKETCAP_API_URI = "https://api.coinmarketcap.com";
 // charts.
 let UPDATE_INTERVAL = 60 * 1000;
 
-let app = new Vue({
-  el: "#app",
+let privCoins = new Vue({
+  el: "#privCoins",
   data: {
-    coins: {},
+    /*coins: {},*/
 
     /* New code */
     privCoins: {},
     privData: {},
     /* */
 
-    coinData: {}
+  /*  coinData: {}*/
   },
   methods: {
 
@@ -41,11 +41,11 @@ let app = new Vue({
 
       axios.get(CRYPTOCOMPARE_API_URI + "/data/all/coinlist")
         .then((resp) => {
-          this.coinData = resp.data.Data;
-          this.getCoins();
+          this.privData = resp.data.Data;
+          this.getPriv();
         })
         .catch((err) => {
-          this.getCoins();
+          this.getPriv();
           console.error(err);
         });
     },
@@ -53,7 +53,7 @@ let app = new Vue({
     /**
      * Get the top 5 cryptocurrencies by value.  This data is refreshed each 5
      * minutes by the backing API service.
-     */
+
     getCoins: function() {
       let self = this;
 
@@ -61,6 +61,18 @@ let app = new Vue({
         .then((resp) => {
           this.coins = resp.data.data;
         })
+        .catch((err) => {
+          console.error(err);
+        });
+    },*/
+
+    getPriv: function() {
+      let self = this;
+
+      axios.get(COINMARKETCAP_API_URI + "/v2/ticker/328/")
+      .then((resp) => {
+        this.privCoins = resp.data;
+      })
         .catch((err) => {
           console.error(err);
         });
@@ -81,12 +93,13 @@ let app = new Vue({
       symbol = (symbol === "VERI" ? "VRM" : symbol);
 
       try {
-          return CRYPTOCOMPARE_URI + this.coinData[symbol].ImageUrl;
+          return CRYPTOCOMPARE_URI + this.privCoins[symbol].ImageUrl;
 
       } catch(err) {
         console.log(err);
       }
     },
+
 
     /**
      * Return a CSS color (either red or green) depending on whether or
@@ -114,5 +127,5 @@ let app = new Vue({
  * their prices every 5 minutes, so checking every minute is sufficient.
  */
 setInterval(() => {
-  app.getCoins();
+  privCoins.getPriv();
 }, UPDATE_INTERVAL);
