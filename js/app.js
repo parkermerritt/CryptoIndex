@@ -22,6 +22,12 @@ let app = new Vue({
   el: "#app",
   data: {
     coins: {},
+
+    /* New code */
+    privCoins: {},
+    privData: {},
+    /* */
+
     coinData: {}
   },
   methods: {
@@ -45,7 +51,7 @@ let app = new Vue({
     },
 
     /**
-     * Get the top 10 cryptocurrencies by value.  This data is refreshed each 5
+     * Get the top 5 cryptocurrencies by value.  This data is refreshed each 5
      * minutes by the backing API service.
      */
     getCoins: function() {

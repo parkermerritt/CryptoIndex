@@ -29,7 +29,38 @@
     <div class="card__flipper">
       <div class="card__front">
         <p class="card__name"><span>Privacy</span><br>Coins</p>
-        <p class="card__num">9</p>
+
+
+        <div id="app">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <td>Coin</td>
+                    <td>Symbol</td>
+                    <td>Price</td>
+                    <!--<td>1H</td>-->
+                    <td>1D</td>
+                </thead>
+                <tbody>
+                  <tr v-cloak v-for="coin in coins">
+                    <td><img v-bind:src="getCoinImage('XMR')"> {{ }}</td>
+                    <td>{{ coin.symbol }}</td>
+                    <td>{{ coin.price_usd | currency }}</td>
+                    <!--<td v-bind:style="getColor(coin.percent_change_1h)">
+                      <span v-if="coin.percent_change_1h > 0">+</span>{{ coin.percent_change_1h }}%
+                    </td>-->
+                    <td v-bind:style="getColor(coin.percent_change_24h)">
+                      <span v-if="coin.percent_change_24h > 0">+</span>{{ coin.percent_change_24h }}%
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+
+        </p>
       </div>
       <div class="card__back">
         <svg height="180" width="180">
@@ -50,18 +81,15 @@
                <table class="table table-hover">
                  <thead>
                    <tr>
-
-                     <td>Name</td>
+                     <td>Coin</td>
                      <td>Symbol</td>
                      <td>Price</td>
                      <td>1H</td>
                      <td>1D</td>
-
                  </thead>
                  <tbody>
                    <tr v-cloak v-for="coin in coins">
-
-                     <td><img v-bind:src="getCoinImage(coin.symbol)"> {{ coin.name }}</td>
+                     <td><img v-bind:src="getCoinImage(coin.symbol)"> {{ }}</td>
                      <td>{{ coin.symbol }}</td>
                      <td>{{ coin.price_usd | currency }}</td>
                      <td v-bind:style="getColor(coin.percent_change_1h)">
@@ -76,7 +104,7 @@
                </table>
              </div>
 
-        <p class="card__num"><div id="result"></div>
+        <!--<p class="card__num"><div id="result"></div>-->
 
 </p>
       </div>
@@ -94,7 +122,40 @@
     <div class="card__flipper">
        <div class="card__front">
         <p class="card__name"><span>Proof of</span><br>Stake</p>
-        <p class="card__num">7</p>
+
+
+        <div id="app">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <td>Coin</td>
+                    <td>Symbol</td>
+                    <td>Price</td>
+                    <td>1H</td>
+                    <td>1D</td>
+                </thead>
+                <tbody>
+                  <tr v-cloak v-for="coin in coins">
+                    <td><img v-bind:src="getCoinImage(coin.symbol)"> {{ }}</td>
+                    <td>{{ coin.symbol }}</td>
+                    <td>{{ coin.price_usd | currency }}</td>
+                    <td v-bind:style="getColor(coin.percent_change_1h)">
+                      <span v-if="coin.percent_change_1h > 0">+</span>{{ coin.percent_change_1h }}%
+                    </td>
+                    <td v-bind:style="getColor(coin.percent_change_24h)">
+                      <span v-if="coin.percent_change_24h > 0">+</span>{{ coin.percent_change_24h }}%
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+
+
+
+      </p>
       </div>
       <div class="card__back">
         <svg height="180" width="180">
