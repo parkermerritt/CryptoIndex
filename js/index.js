@@ -1,4 +1,7 @@
 
+
+/* Cards */
+
 var Flipper = (function() {
   var card = $('.card');
   var flipper = card.find('.card__flipper');
@@ -57,3 +60,5 @@ var Flipper = (function() {
 }());
 
 Flipper.init();
+
+/* End Cards */

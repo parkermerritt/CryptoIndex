@@ -15,6 +15,11 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+body,
+#result {
+  padding: 15px;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -36,6 +41,21 @@ ul {
   -webkit-perspective: 1000;
           perspective: 1000;
 }
+/*Card Graphics */
+[v-cloak] {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+td img {
+  width: 25px;
+}
+
+
+
 /* Original Card CSS */
 .card {
   float: left;
