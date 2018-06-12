@@ -44,8 +44,11 @@ ul {
 
 /*Card Graphics */
 table {
-  width: 100%;
+  width: 99%;
+  margin-left: 5px;
+  margin-right: 9px;
 }
+
 [v-cloak] {
   display: none;
 }
@@ -58,11 +61,8 @@ td img {
   width: 25px;
 }
 
-.flex {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  font-size: 15px;
+td {
+  font-size: 14px;
 }
 
 
