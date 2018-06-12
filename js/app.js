@@ -24,7 +24,7 @@ let privCoins = new Vue({
     /*coins: {},*/
 
     /* New code */
-    privIds : [328,1024],
+    privIds : [328,1024,45,1,2],
     privCoins: {},
     privData: {},
     /* */
@@ -70,11 +70,16 @@ let privCoins = new Vue({
 
     getPriv: function() {
       let self = this;
+      var i;
+      var privIds = [328,1437];
 
-      axios.get(COINMARKETCAP_API_URI + "/v2/ticker/328/")
+      for (i = 0; i < 2; i++) {
+      axios.get(COINMARKETCAP_API_URI + "/v2/ticker/" + privIds[i] + "/")
       .then((resp) => {
-        this.coinData = resp.data.data;
+        this.coinData[i] = resp.data.data;
         console.log(resp.data.data);
+        console.log(this.coinData[i]);
+
         this.privCoins = resp.data.data;
         this.symbol = (this.privCoins || {}).symbol;
         console.log(this.symbol);
@@ -86,6 +91,7 @@ let privCoins = new Vue({
         .catch((err) => {
           console.error(err);
         });
+      }
     },
 
 
@@ -119,7 +125,7 @@ let privCoins = new Vue({
      * not the value passed in is negative or positive.
      */
     getColor: (num) => {
-      return num > 0 ? "color:green;" : "color:red;";
+      return num > 0 ? "color:green;" : "color:#ff5656;";
     },
   },
 

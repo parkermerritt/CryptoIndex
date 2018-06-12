@@ -39,8 +39,21 @@
 
                 </thead>
                 <tbody>
-                  <tr v-cloak v-for="coin in privCoins">
-                    <!--<td><img v-bind:src="getCoinImage(coin.symbol)"> {{ }}</td>-->
+                  <!--<tr v-cloak v-for="coin in privCoins">-->
+                  <tr v-cloak>
+
+                    <!-- Entry 1-->
+                    <td>{{ privCoins.symbol }}</td>
+                    <td v-bind:style="getColor(privCoins.quotes.USD.percent_change_24h)">
+                      <span v-if="privCoins.quotes.USD.percent_change_24h > 0"></span>{{ privCoins.quotes.USD.price }}
+                    </td>
+                    <td v-bind:style="getColor(privCoins.quotes.USD.percent_change_24h)">
+                      <span v-if="privCoins.quotes.USD.percent_change_24h > 0">+</span>{{ privCoins.quotes.USD.percent_change_24h }}%
+                    </td>
+                  </tr>
+                  <tr v-cloak>
+
+                    <!-- Entry 2 -->
                     <td>{{ privCoins.symbol }}</td>
                     <td v-bind:style="getColor(privCoins.quotes.USD.percent_change_24h)">
                       <span v-if="privCoins.quotes.USD.percent_change_24h > 0"></span>{{ privCoins.quotes.USD.price }}
