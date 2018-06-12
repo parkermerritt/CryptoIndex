@@ -64,7 +64,7 @@ ul {
     .card__front {
       background: $color1;
     }
-    .card__num {
+    .card__name {
       text-shadow: longshadow(darken($color1, 15%),$color1,100, 0.8);
     }
   }
@@ -73,7 +73,7 @@ ul {
      .card__front {
       background: $color2;
     }
-    .card__num {
+    .card__name {
       text-shadow: longshadow(darken($color2, 15%),$color2,100, 0.8);
     }
   }
@@ -83,7 +83,7 @@ ul {
      .card__front {
       background: $color3;
     }
-    .card__num {
+    .card__name {
       text-shadow: longshadow(darken($color3, 15%),$color3,100, 0.8);
     }
   }
@@ -92,7 +92,7 @@ ul {
      .card__front {
       background: $color4;
     }
-    .card__num {
+    .card__name {
       text-shadow: longshadow(darken($color4, 15%),$color4,100, 0.8);
     }
   }
@@ -101,7 +101,7 @@ ul {
      .card__front {
       background: $color5;
     }
-    .card__num {
+    .card__name {
       text-shadow: longshadow(darken($color5, 15%),$color5,100, 0.8);
     }
   }
@@ -110,7 +110,7 @@ ul {
      .card__front {
       background: $color6;
     }
-    .card__num {
+    .card__name {
       text-shadow: longshadow(darken($color6, 15%),$color6,100, 0.8);
     }
   }
@@ -162,6 +162,7 @@ ul {
     font-size: 32px;
     line-height: 0.9;
     font-weight: 700;
+
 
     span {
       font-size: 14px;

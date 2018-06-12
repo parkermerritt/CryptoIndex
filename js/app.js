@@ -24,6 +24,7 @@ let privCoins = new Vue({
     /*coins: {},*/
 
     /* New code */
+    privIds : [328,1024],
     privCoins: {},
     privData: {},
     /* */
@@ -70,17 +71,21 @@ let privCoins = new Vue({
     getPriv: function() {
       let self = this;
 
-      axios.get(COINMARKETCAP_API_URI + "/v2/ticker/328/")
+      axios.get(COINMARKETCAP_API_URI + "/v2/ticker/?=limit=100/")
       .then((resp) => {
+        this.coinData = resp.data.data;
+        console.log(this.coinData);
 
-        console.log(resp.data.data);
-        this.privCoins = resp.data.data;
-        this.symbol = (this.privCoins || {}).symbol;
-        console.log(this.symbol);
-        this.price = (((this.privCoins || {}).quotes || {}).USD || {}).price;
-        console.log(this.price);
-        this.percent_change_24h = (((this.privCoins || {}).quotes || {}).USD || {}).percent_change_24h;
-        console.log(this.privCoins);
+        if (this.coinData.data == 328) {
+          console.log(resp.data.data);
+          this.privCoins.data = this.coinData.data;
+          this.symbol = (this.privCoins || {}).symbol;
+          console.log(this.symbol);
+          this.price = (((this.privCoins || {}).quotes || {}).USD || {}).price;
+          console.log(this.price);
+          this.percent_change_24h = (((this.privCoins || {}).quotes || {}).USD || {}).percent_change_24h;
+          console.log(this.privCoins);
+        }
       })
         .catch((err) => {
           console.error(err);
