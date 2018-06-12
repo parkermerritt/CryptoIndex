@@ -43,6 +43,9 @@ ul {
 }
 
 /*Card Graphics */
+table {
+  width: 100%;
+}
 [v-cloak] {
   display: none;
 }
@@ -53,6 +56,13 @@ h1 {
 
 td img {
   width: 25px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: 15px;
 }
 
 

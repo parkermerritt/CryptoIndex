@@ -76,16 +76,15 @@ let privCoins = new Vue({
         this.coinData = resp.data.data;
         console.log(this.coinData);
 
-        if (this.coinData.data == 328) {
           console.log(resp.data.data);
-          this.privCoins.data = this.coinData.data;
+          this.privCoins.data = coinData.get('328');
           this.symbol = (this.privCoins || {}).symbol;
           console.log(this.symbol);
           this.price = (((this.privCoins || {}).quotes || {}).USD || {}).price;
           console.log(this.price);
           this.percent_change_24h = (((this.privCoins || {}).quotes || {}).USD || {}).percent_change_24h;
           console.log(this.privCoins);
-        }
+
       })
         .catch((err) => {
           console.error(err);
