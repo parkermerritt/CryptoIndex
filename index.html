@@ -35,7 +35,6 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <td>Coin</td>
                     <td>Symbol</td>
                     <td>Price</td>
                     <!--<td>1H</td>-->
@@ -43,14 +42,17 @@
                 </thead>
                 <tbody>
                   <tr v-cloak v-for="coin in privCoins">
-                    <td><img v-bind:src="getCoinImage(coin.symbol)"> {{ }}</td>
-                    <td>{{ coin.symbol }}</td>
-                    <td>{{ coin.price_usd | currency }}</td>
-                    <!--<td v-bind:style="getColor(coin.percent_change_1h)">
-                      <span v-if="coin.percent_change_1h > 0">+</span>{{ coin.percent_change_1h }}%
-                    </td>-->
-                    <td v-bind:style="getColor(coin.percent_change_24h)">
-                      <span v-if="coin.percent_change_24h > 0">+</span>{{ coin.percent_change_24h }}%
+                    <!--<td><img v-bind:src="getCoinImage(coin.symbol)"> {{ }}</td>-->
+                    <td>{{ privCoins.symbol }}</td>
+                    <!--<td>{{ coin.price }}</td>-->
+                    <td v-bind:style="getColor(privCoins.quotes.USD.percent_change_24h)">
+
+                      <span v-if="privCoins.quotes.USD.percent_change_24h > 0"></span>{{ privCoins.quotes.USD.price }}
+                    </td>
+
+
+                    <td v-bind:style="getColor(privCoins.quotes.USD.percent_change_24h)">
+                      <span v-if="privCoins.quotes.USD.percent_change_24h > 0">+</span>{{ privCoins.quotes.USD.percent_change_24h }}%
                     </td>
 
                   </tr>

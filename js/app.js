@@ -28,7 +28,7 @@ let privCoins = new Vue({
     privData: {},
     /* */
 
-  /*  coinData: {}*/
+    coinData: {}
   },
   methods: {
 
@@ -42,6 +42,7 @@ let privCoins = new Vue({
       axios.get(CRYPTOCOMPARE_API_URI + "/data/all/coinlist")
         .then((resp) => {
           this.privData = resp.data.Data;
+          console.log(this.privData);
           this.getPriv();
         })
         .catch((err) => {
@@ -71,17 +72,28 @@ let privCoins = new Vue({
 
       axios.get(COINMARKETCAP_API_URI + "/v2/ticker/328/")
       .then((resp) => {
-        this.privCoins = resp.data;
+
+        console.log(resp.data.data);
+        this.privCoins = resp.data.data;
+        this.symbol = (this.privCoins || {}).symbol;
+        console.log(this.symbol);
+        this.price = (((this.privCoins || {}).quotes || {}).USD || {}).price;
+        console.log(this.price);
+        this.percent_change_24h = (((this.privCoins || {}).quotes || {}).USD || {}).percent_change_24h;
+        console.log(this.privCoins);
       })
         .catch((err) => {
           console.error(err);
         });
     },
 
+
+
+
     /**
      * Given a cryptocurrency ticket symbol, return the currency's logo
      * image.
-     */
+
     getCoinImage: function(symbol) {
 
       // These two symbols don't match up across API services. I'm manually
