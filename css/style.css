@@ -65,7 +65,10 @@ td {
   font-size: 13px;
   line-height: 40px;
   vertical-align: top;
+
 }
+
+
 
 .pricefont {
     font-size:15px;
@@ -78,7 +81,18 @@ td {
 
 
 
+
 /* Original Card CSS */
+.in_card {
+  float: left;
+  position: relative;
+  width: calc(100% * .3333 - 30px + .3333 * 30px);
+  height: 340px;
+  margin: -20px 30px 30px 0;
+  -webkit-perspective: 1000;
+          perspective: 1000;
+}
+
 .card {
   float: left;
   position: relative;

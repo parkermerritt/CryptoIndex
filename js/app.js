@@ -16,7 +16,7 @@ let COINMARKETCAP_API_URI = "https://api.coinmarketcap.com";
 
 // The amount of milliseconds (ms) after which we should update our currency
 // charts.
-let UPDATE_INTERVAL = 20 * 1000;
+let UPDATE_INTERVAL = 60 * 1000;
 
 var coins = [];
 var privCoins = [];
