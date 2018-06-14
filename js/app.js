@@ -26,7 +26,7 @@ let privCoins = new Vue({
     /* New code */
     privIds : [328,1024],
     privCoins : [],
-    privData: {},
+    currCoins : [],
     /* */
     coinData: {}
   },
@@ -63,6 +63,10 @@ let privCoins = new Vue({
           console.log(this.coins[328]);
           this.privCoins.push(this.coins[328]);
           this.privCoins.push(this.coins[1437]);
+          this.currCoins.push(this.coins[1]);
+          this.currCoins.push(this.coins[2]);
+
+
           console.log(this.privCoins[0].symbol);
           console.log(this.privCoins[1].quotes.USD.price);
 
@@ -152,16 +156,9 @@ let privCoins = new Vue({
      * not the value passed in is negative or positive.
      */
     getColor: (num) => {
-      return num > 0 ? "color:green;" : "color:#ff5656;";
+      return (num > 0.00 ? "color:#42f456;" : "color:#ff5656;");
     },
   },
-
-
-/*  filters: {
-    privList : function (value) {
-
-    }
-  },*/
 
 
 

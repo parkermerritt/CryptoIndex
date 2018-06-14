@@ -42,10 +42,10 @@
                   <tr v-cloak v-for="coin in privCoins">
                     <td>{{ coin.symbol }}</td>
 
-                    <td v-bind:style="getColor(coin.quotes.percent_change_24h)">
+                    <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
                       <span v-if="coin.quotes.USD.percent_change_24h > 0"></span>{{ coin.quotes.USD.price }}
                     </td>
-                    <td v-bind:style="getColor(coin.quotes.percent_change_24h)">
+                    <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
                       <span v-if="coin.quotes.USD.percent_change_24h > 0">+</span>{{ coin.quotes.USD.percent_change_24h }}%
                     </td>
                   </tr>
