@@ -62,7 +62,9 @@ td img {
 }
 
 td {
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 38px;
+  padding-right: 10px;
 }
 
 

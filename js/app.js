@@ -25,10 +25,13 @@ let app = new Vue({
   el: "#app",
   data: {
     coins: {},
-    /* New code */
-    privIds : [328,1024],
+    /* Coin classes */
     privCoins : [],
     currCoins : [],
+    exCoins : [],
+    resCoins : [],
+    gasCoins : [],
+    utilCoins : [],
     /* */
     coinData: {}
   },
@@ -44,7 +47,6 @@ let app = new Vue({
       axios.get(CRYPTOCOMPARE_API_URI + "/data/all/coinlist")
         .then((resp) => {
           this.coinData = resp.data.Data;
-          console.log(this.coinData);
           this.getCoins();
         })
         .catch((err) => {
@@ -59,21 +61,29 @@ let app = new Vue({
     getCoins: function() {
       let self = this;
 
-      axios.get(COINMARKETCAP_API_URI + "/v2/ticker/?limit=100")
+      privIds = [328,1437,131,693,1169,2044];
+      currIds = [1,2,52,1831,1168,512,1720];
+      exIds = [1839,1934,2087,1521,1274,2496];
+      resIds = [1455,291,1042,2299,2496,2496];
+      gasIds = [1027,1765,1376,1321,2010,2099];
+      utilIds = [1104,1958,1808,1896,1759,1925];
+
+      axios.get(COINMARKETCAP_API_URI + "/v2/ticker/")
         .then((resp) => {
           this.coins = resp.data.data;
-          console.log(this.coins[328]);
-          this.privCoins.push(this.coins[328]);
-          this.privCoins.push(this.coins[1437]);
-          this.currCoins.push(this.coins[1]);
-          this.currCoins.push(this.coins[2]);
+          console.log(this.coins);
 
+          for (var i = 0; i < 5; i++) {
+            this.privCoins.push(this.coins[privIds[i]]);
+            this.currCoins.push(this.coins[currIds[i]]);
+            this.exCoins.push(this.coins[exIds[i]]);
+            this.resCoins.push(this.coins[resIds[i]]);
+            this.gasCoins.push(this.coins[gasIds[i]]);
+            this.utilCoins.push(this.coins[utilIds[i]]);
+          }
 
           console.log(this.privCoins[0].symbol);
           console.log(this.privCoins[1].quotes.USD.price);
-
-
-
 
           }
         )
@@ -158,7 +168,7 @@ let app = new Vue({
      * not the value passed in is negative or positive.
      */
     getColor: (num) => {
-      return (num > 0.00 ? "color:#42f456;" : "color:#ff5656;");
+      return (num > 0.00 ? "color:#42f456;" : "color:#ff7a7a;");
     },
   },
 

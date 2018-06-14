@@ -115,7 +115,7 @@
   <li class="card">
     <div class="card__flipper">
        <div class="card__front">
-        <p class="card__name"><span>Tokenized</span><br>Securities</p>
+        <p class="card__name"><span>Token</span><br>Exchanges</p>
 
 
         <div>
@@ -128,7 +128,7 @@
 
             </thead>
             <tbody>
-              <tr v-cloak v-for="coin in privCoins">
+              <tr v-cloak v-for="coin in exCoins">
                 <td>{{ coin.symbol }}</td>
 
                 <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
@@ -176,7 +176,7 @@
 
             </thead>
             <tbody>
-              <tr v-cloak v-for="coin in privCoins">
+              <tr v-cloak v-for="coin in resCoins">
                 <td>{{ coin.symbol }}</td>
 
                 <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
@@ -220,7 +220,7 @@
 
             </thead>
             <tbody>
-              <tr v-cloak v-for="coin in privCoins">
+              <tr v-cloak v-for="coin in gasCoins">
                 <td>{{ coin.symbol }}</td>
 
                 <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
@@ -262,7 +262,7 @@
 
             </thead>
             <tbody>
-              <tr v-cloak v-for="coin in privCoins">
+              <tr v-cloak v-for="coin in utilCoins">
                 <td>{{ coin.symbol }}</td>
 
                 <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
