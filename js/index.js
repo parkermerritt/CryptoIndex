@@ -1,4 +1,8 @@
-
+$(document).ready(function(){
+        $("#div1").fadeIn(6000);
+        $("#div2").fadeIn(7000);
+        $("#div3").fadeIn(9000);
+});
 
 /* Cards */
 

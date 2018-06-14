@@ -16,7 +16,7 @@ let COINMARKETCAP_API_URI = "https://api.coinmarketcap.com";
 
 // The amount of milliseconds (ms) after which we should update our currency
 // charts.
-let UPDATE_INTERVAL = 60 * 1000;
+let UPDATE_INTERVAL = 20 * 1000;
 
 var coins = [];
 var privCoins = [];
@@ -72,6 +72,15 @@ let app = new Vue({
         .then((resp) => {
           this.coins = resp.data.data;
           console.log(this.coins);
+          console.log(privCoins);
+          for (var i = 0; i < 3; i++) {
+          this.privCoins.pop();
+          this.currCoins.pop();
+          this.exCoins.pop();
+          this.resCoins.pop();
+          this.gasCoins.pop();
+          this.utilCoins.pop();
+        }
 
           for (var i = 0; i < 3; i++) {
             this.privCoins.push(this.coins[privIds[i]]);
@@ -81,6 +90,7 @@ let app = new Vue({
             this.gasCoins.push(this.coins[gasIds[i]]);
             this.utilCoins.push(this.coins[utilIds[i]]);
           }
+
 
           console.log(this.privCoins[0].symbol);
           console.log(this.privCoins[1].quotes.USD.price);
