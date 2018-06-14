@@ -18,17 +18,16 @@ let COINMARKETCAP_API_URI = "https://api.coinmarketcap.com";
 // charts.
 let UPDATE_INTERVAL = 60 * 1000;
 
+
 let privCoins = new Vue({
   el: "#privCoins",
   data: {
-    /*coins: {},*/
-
+    coins: {},
     /* New code */
-    privIds : [328,1024,45,1,2],
-    privCoins: {},
+    privIds : [328,1024],
+    privCoins : [],
     privData: {},
     /* */
-
     coinData: {}
   },
   methods: {
@@ -42,62 +41,90 @@ let privCoins = new Vue({
 
       axios.get(CRYPTOCOMPARE_API_URI + "/data/all/coinlist")
         .then((resp) => {
-          this.privData = resp.data.Data;
-          console.log(this.privData);
-          this.getPriv();
+          this.coinData = resp.data.Data;
+          console.log(this.coinData);
+          this.getCoins();
         })
         .catch((err) => {
-          this.getPriv();
+          this.getCoins();
           console.error(err);
         });
     },
 
-    /**
-     * Get the top 5 cryptocurrencies by value.  This data is refreshed each 5
-     * minutes by the backing API service.
+     /* Get the top 5 cryptocurrencies by value.  This data is refreshed each 5
+    / * minutes by the backing API service. */
 
     getCoins: function() {
       let self = this;
 
-      axios.get(COINMARKETCAP_API_URI + "/v2/ticker/?limit=5")
+      axios.get(COINMARKETCAP_API_URI + "/v2/ticker/?limit=100")
         .then((resp) => {
           this.coins = resp.data.data;
-        })
+          console.log(this.coins[328]);
+          this.privCoins.push(this.coins[328]);
+          this.privCoins.push(this.coins[1437]);
+          console.log(this.privCoins[0].symbol);
+          console.log(this.privCoins[1].quotes.USD.price);
+
+
+
+
+          }
+        )
         .catch((err) => {
           console.error(err);
         });
-    },*/
+    },
 
-    getPriv: function() {
+
+
+
+
+
+
+
+
+
+
+
+
+    /*getPriv: function() {
       let self = this;
       var i;
       var privIds = [328,1437];
 
       for (i = 0; i < 2; i++) {
-      axios.get(COINMARKETCAP_API_URI + "/v2/ticker/" + privIds[i] + "/")
-      .then((resp) => {
-        this.coinData[i] = resp.data.data;
-        console.log(resp.data.data);
-        console.log(this.coinData[i]);
+          axios.get(COINMARKETCAP_API_URI + "/v2/ticker/" + privIds[i] + "/")
+          .then((resp) => {
+          this.coinData = resp.data.data;
+          /*privObjs[i] = resp.data.data;*/
+          /*console.log(resp.data.data);
+          console.log(privObjs);
+          privObjs.push(this.coinData);
 
-        this.privCoins = resp.data.data;
-        this.symbol = (this.privCoins || {}).symbol;
-        console.log(this.symbol);
-        this.price = (((this.privCoins || {}).quotes || {}).USD || {}).price;
-        console.log(this.price);
-        this.percent_change_24h = (((this.privCoins || {}).quotes || {}).USD || {}).percent_change_24h;
-        console.log(this.privCoins);
+          this.privCoins = resp.data.data;
+          this.symbol = (this.privCoins || {}).symbol;
+          /*console.log(this.symbol);
+          this.price = (((this.privCoins || {}).quotes || {}).USD || {}).price;
+          /* console.log(this.price);
+          this.percent_change_24h = (((this.privCoins || {}).quotes || {}).USD || {}).percent_change_24h;
+          /*console.log(this.privCoins);
+
       })
         .catch((err) => {
           console.error(err);
         });
       }
     },
+    */
 
 
 
 
-    /**
+
+
+
+    /*
      * Given a cryptocurrency ticket symbol, return the currency's logo
      * image.
 
@@ -129,22 +156,32 @@ let privCoins = new Vue({
     },
   },
 
-  /**
+
+/*  filters: {
+    privList : function (value) {
+
+    }
+  },*/
+
+
+
+
+
+/*
    * Using this lifecycle hook, we'll populate all of the cryptocurrency data as
    * soon as the page is loaded a single time.
-   */
+*/
   created: function () {
     this.getCoinData();
   }
 });
 
-/**
+/*
  * Once the page has been loaded and all of our app stuff is working, we'll
  * start polling for new cryptocurrency data every minute.
- *
  * This is sufficiently dynamic because the API's we're relying on are updating
  * their prices every 5 minutes, so checking every minute is sufficient.
- */
+*/
 setInterval(() => {
   privCoins.getPriv();
 }, UPDATE_INTERVAL);
