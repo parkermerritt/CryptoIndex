@@ -18,9 +18,11 @@ let COINMARKETCAP_API_URI = "https://api.coinmarketcap.com";
 // charts.
 let UPDATE_INTERVAL = 60 * 1000;
 
+var coins = [];
+var privCoins = [];
 
-let privCoins = new Vue({
-  el: "#privCoins",
+let app = new Vue({
+  el: "#app",
   data: {
     coins: {},
     /* New code */
@@ -180,5 +182,5 @@ let privCoins = new Vue({
  * their prices every 5 minutes, so checking every minute is sufficient.
 */
 setInterval(() => {
-  privCoins.getPriv();
+  app.getCoins();
 }, UPDATE_INTERVAL);

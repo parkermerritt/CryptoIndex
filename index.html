@@ -23,13 +23,13 @@
   <p>Daily performance of various cryptoasset sectors.</p>
 </main>
 <ul>
+  <div id="app">
 
   <!-- Card 1 -->
   <li class="card">
     <div class="card__flipper">
       <div class="card__front">
         <p class="card__name"><span>Privacy</span><br>Coins</p>
-        <div id="privCoins">
               <table class="table">
                 <thead>
                   <tr>
@@ -53,7 +53,6 @@
 
                 </tbody>
               </table>
-            </div>
 
 
         </p>
@@ -74,25 +73,27 @@
          <p class="card__name"><span>Crypto</span><br>Currencies</p>
 
          <div id="app">
-               <table class="table table-hover" style="margin:8px;">
+               <table class="table">
                  <thead>
                    <tr>
                      <td>Symbol</td>
                      <td>Price (USD)</td>
-                     <td>Change</td>
+                     <td> Change </td>
+
                  </thead>
                  <tbody>
-                   <tr v-cloak v-for="coin in coins">
+                   <tr v-cloak v-for="coin in currCoins">
                      <td>{{ coin.symbol }}</td>
-                     <td>{{ coin.price_usd | currency }}</td>
-                     <td v-bind:style="getColor(coin.percent_change_1h)">
-                       <span v-if="coin.percent_change_1h > 0">+</span>{{ coin.percent_change_1h }}%
-                     </td>
-                     <td v-bind:style="getColor(coin.percent_change_24h)">
-                       <span v-if="coin.percent_change_24h > 0">+</span>{{ coin.percent_change_24h }}%
-                     </td>
 
+                     <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
+                       <span v-if="coin.quotes.USD.percent_change_24h > 0"></span>{{ coin.quotes.USD.price }}
+                     </td>
+                     <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
+                       <span v-if="coin.quotes.USD.percent_change_24h > 0">+</span>{{ coin.quotes.USD.percent_change_24h }}%
+                     </td>
                    </tr>
+                   <tr v-cloak>
+
                  </tbody>
                </table>
              </div>
@@ -118,29 +119,29 @@
 
 
         <div>
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <td>Coin</td>
-                    <td>Symbol</td>
-                    <td>Price</td>
-                    <td>1H</td>
-                    <td>1D</td>
-                </thead>
-                <tbody>
-                  <tr v-cloak v-for="coin in coins">
-                    <td><img v-bind:src="getCoinImage(coin.symbol)"> {{ }}</td>
-                    <td>{{ coin.symbol }}</td>
-                    <td>{{ coin.price_usd | currency }}</td>
-                    <td v-bind:style="getColor(coin.percent_change_1h)">
-                      <span v-if="coin.percent_change_1h > 0">+</span>{{ coin.percent_change_1h }}%
-                    </td>
-                    <td v-bind:style="getColor(coin.percent_change_24h)">
-                      <span v-if="coin.percent_change_24h > 0">+</span>{{ coin.percent_change_24h }}%
-                    </td>
+          <table class="table">
+            <thead>
+              <tr>
+                <td>Symbol</td>
+                <td>Price (USD)</td>
+                <td> Change </td>
 
-                  </tr>
-                </tbody>
+            </thead>
+            <tbody>
+              <tr v-cloak v-for="coin in privCoins">
+                <td>{{ coin.symbol }}</td>
+
+                <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
+                  <span v-if="coin.quotes.USD.percent_change_24h > 0"></span>{{ coin.quotes.USD.price }}
+                </td>
+                <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
+                  <span v-if="coin.quotes.USD.percent_change_24h > 0">+</span>{{ coin.quotes.USD.percent_change_24h }}%
+                </td>
+              </tr>
+              <tr v-cloak>
+
+            </tbody>
+          </table>
               </table>
             </div>
 
@@ -159,32 +160,36 @@
     </div>
   </li>
 
+  <!-- Card 4 -->
 
   <li class="card">
     <div class="card__flipper">
        <div class="card__front">
         <p class="card__name"><span>Computational</span><br>Resources</p>
-        <div id="app">
-              <table class="table table-hover" style="margin:8px;">
-                <thead>
-                  <tr>
-                    <td>Symbol</td>
-                    <td>Price (USD)</td>
-                    <td>Change</td>
-                </thead>
-                <tbody>
-                  <tr v-cloak v-for="coin in coins">
-                    <td>{{ coin.symbol }}</td>
-                    <td>{{ coin.price_usd | currency }}</td>
-                    <td v-bind:style="getColor(coin.percent_change_1h)">
-                      <span v-if="coin.percent_change_1h > 0">+</span>{{ coin.percent_change_1h }}%
-                    </td>
-                    <td v-bind:style="getColor(coin.percent_change_24h)">
-                      <span v-if="coin.percent_change_24h > 0">+</span>{{ coin.percent_change_24h }}%
-                    </td>
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <td>Symbol</td>
+                <td>Price (USD)</td>
+                <td> Change </td>
 
-                  </tr>
-                </tbody>
+            </thead>
+            <tbody>
+              <tr v-cloak v-for="coin in privCoins">
+                <td>{{ coin.symbol }}</td>
+
+                <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
+                  <span v-if="coin.quotes.USD.percent_change_24h > 0"></span>{{ coin.quotes.USD.price }}
+                </td>
+                <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
+                  <span v-if="coin.quotes.USD.percent_change_24h > 0">+</span>{{ coin.quotes.USD.percent_change_24h }}%
+                </td>
+              </tr>
+              <tr v-cloak>
+
+            </tbody>
+          </table>
               </table>
             </div>
 
@@ -199,33 +204,36 @@
   </li>
 
 
+  <!-- Card 5-->
 
   <li class="card">
     <div class="card__flipper">
        <div class="card__front">
         <p class="card__name"><span>Platform</span><br>Gas</p>
         <div id="app">
-              <table class="table table-hover" style="margin:8px;">
-                <thead>
-                  <tr>
-                    <td>Symbol</td>
-                    <td>Price (USD)</td>
-                    <td>Change</td>
-                </thead>
-                <tbody>
-                  <tr v-cloak v-for="coin in coins">
-                    <td>{{ coin.symbol }}</td>
-                    <td>{{ coin.price_usd | currency }}</td>
-                    <td v-bind:style="getColor(coin.percent_change_1h)">
-                      <span v-if="coin.percent_change_1h > 0">+</span>{{ coin.percent_change_1h }}%
-                    </td>
-                    <td v-bind:style="getColor(coin.percent_change_24h)">
-                      <span v-if="coin.percent_change_24h > 0">+</span>{{ coin.percent_change_24h }}%
-                    </td>
+          <table class="table">
+            <thead>
+              <tr>
+                <td>Symbol</td>
+                <td>Price (USD)</td>
+                <td> Change </td>
 
-                  </tr>
-                </tbody>
-              </table>
+            </thead>
+            <tbody>
+              <tr v-cloak v-for="coin in privCoins">
+                <td>{{ coin.symbol }}</td>
+
+                <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
+                  <span v-if="coin.quotes.USD.percent_change_24h > 0"></span>{{ coin.quotes.USD.price }}
+                </td>
+                <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
+                  <span v-if="coin.quotes.USD.percent_change_24h > 0">+</span>{{ coin.quotes.USD.percent_change_24h }}%
+                </td>
+              </tr>
+              <tr v-cloak>
+
+            </tbody>
+          </table>
             </div>
 
       </div>
@@ -238,32 +246,36 @@
     </div>
   </li>
 
+  <!-- Card 6 -->
 
   <li class="card">
     <div class="card__flipper">
        <div class="card__front">
         <p class="card__name"><span>Utility</span><br>Tokens</p>
         <div id="app">
-              <table class="table table-hover" style="margin:8px;">
-                <thead>
-                  <tr>
-                    <td>Symbol</td>
-                    <td>Price (USD)</td>
-                    <td>Change</td>
-                </thead>
-                <tbody>
-                  <tr v-cloak v-for="coin in coins">
-                    <td>{{ coin.symbol }}</td>
-                    <td>{{ coin.price_usd | currency }}</td>
-                    <td v-bind:style="getColor(coin.percent_change_1h)">
-                      <span v-if="coin.percent_change_1h > 0">+</span>{{ coin.percent_change_1h }}%
-                    </td>
-                    <td v-bind:style="getColor(coin.percent_change_24h)">
-                      <span v-if="coin.percent_change_24h > 0">+</span>{{ coin.percent_change_24h }}%
-                    </td>
+          <table class="table">
+            <thead>
+              <tr>
+                <td>Symbol</td>
+                <td>Price (USD)</td>
+                <td> Change </td>
 
-                  </tr>
-                </tbody>
+            </thead>
+            <tbody>
+              <tr v-cloak v-for="coin in privCoins">
+                <td>{{ coin.symbol }}</td>
+
+                <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
+                  <span v-if="coin.quotes.USD.percent_change_24h > 0"></span>{{ coin.quotes.USD.price }}
+                </td>
+                <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
+                  <span v-if="coin.quotes.USD.percent_change_24h > 0">+</span>{{ coin.quotes.USD.percent_change_24h }}%
+                </td>
+              </tr>
+              <tr v-cloak>
+
+            </tbody>
+          </table>
               </table>
             </div>
 
@@ -276,6 +288,7 @@
       </div>
     </div>
   </li>
+</div>
 </ul>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
