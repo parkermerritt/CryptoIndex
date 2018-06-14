@@ -7,9 +7,12 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
 <meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
       <link rel="stylesheet" href="css/style.css">
+
 
 
 </head>
@@ -40,7 +43,31 @@
                 </thead>
                 <tbody>
                   <tr v-cloak v-for="coin in privCoins">
-                    <td>{{ coin.symbol }}</td>
+                    <td>
+
+                      <!-- cointest -->
+                      <div class="skill-icon red">
+                          <div class="coin front">
+                            <div class="icon"></div>
+                          </div>
+                          <div class="coin"></div>
+                          <div class="coin"></div>
+                          <div class="coin"></div>
+                          <div class="coin"></div>
+                          <div class="coin"></div>
+                          <div class="coin"></div>
+                          <div class="coin"></div>
+                          <div class="coin"></div>
+                          <div class="coin back">
+                            <div class="icon"></div>
+                          </div>
+                          <div class="coin-wedge"></div>
+                        </div>
+                      <!-- -->
+                      {{ coin.symbol }}
+                    </td>
+
+
 
                     <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
                       <span v-if="coin.quotes.USD.percent_change_24h > 0"></span>{{ coin.quotes.USD.price }}
@@ -83,7 +110,27 @@
                  </thead>
                  <tbody>
                    <tr v-cloak v-for="coin in currCoins">
-                     <td>{{ coin.symbol }}</td>
+                     <td>  <!-- cointest -->
+                       <div class="skill-icon orange">
+                           <div class="coin front">
+                             <div class="icon"></div>
+                           </div>
+                           <div class="coin"></div>
+                           <div class="coin"></div>
+                           <div class="coin"></div>
+                           <div class="coin"></div>
+                           <div class="coin"></div>
+                           <div class="coin"></div>
+                           <div class="coin"></div>
+                           <div class="coin"></div>
+                           <div class="coin back">
+                             <div class="icon"></div>
+                           </div>
+                           <div class="coin-wedge"></div>
+                         </div>
+                       <!-- -->
+
+                       {{ coin.symbol }}</td>
 
                      <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
                        <span v-if="coin.quotes.USD.percent_change_24h > 0"></span>{{ coin.quotes.USD.price }}
@@ -129,7 +176,27 @@
             </thead>
             <tbody>
               <tr v-cloak v-for="coin in exCoins">
-                <td>{{ coin.symbol }}</td>
+                <td>  <!-- cointest -->
+                  <div class="skill-icon green">
+                      <div class="coin front">
+                        <div class="icon"></div>
+                      </div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin back">
+                        <div class="icon"></div>
+                      </div>
+                      <div class="coin-wedge"></div>
+                    </div>
+                  <!-- -->
+
+                  {{ coin.symbol }}</td>
 
                 <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
                   <span v-if="coin.quotes.USD.percent_change_24h > 0"></span>{{ coin.quotes.USD.price }}
@@ -177,12 +244,31 @@
             </thead>
             <tbody>
               <tr v-cloak v-for="coin in resCoins">
-                <td>{{ coin.symbol }}</td>
+                <td>  <!-- cointest -->
+                  <div class="skill-icon blue">
+                      <div class="coin front">
+                        <div class="icon"></div>
+                      </div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin back">
+                        <div class="icon"></div>
+                      </div>
+                      <div class="coin-wedge"></div>
+                    </div>
+                  <!-- -->
+                  {{ coin.symbol }}</td>
 
-                <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
+                <td class="pricefont" v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
                   <span v-if="coin.quotes.USD.percent_change_24h > 0"></span>{{ coin.quotes.USD.price }}
                 </td>
-                <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
+                <td class="pricefont" v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
                   <span v-if="coin.quotes.USD.percent_change_24h > 0">+</span>{{ coin.quotes.USD.percent_change_24h }}%
                 </td>
               </tr>
@@ -221,7 +307,26 @@
             </thead>
             <tbody>
               <tr v-cloak v-for="coin in gasCoins">
-                <td>{{ coin.symbol }}</td>
+                <td>  <!-- cointest -->
+                  <div class="skill-icon green">
+                      <div class="coin front">
+                        <div class="icon"></div>
+                      </div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin back">
+                        <div class="icon"></div>
+                      </div>
+                      <div class="coin-wedge"></div>
+                    </div>
+                  <!-- -->
+                  {{ coin.symbol }}</td>
 
                 <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
                   <span v-if="coin.quotes.USD.percent_change_24h > 0"></span>{{ coin.quotes.USD.price }}
@@ -263,7 +368,27 @@
             </thead>
             <tbody>
               <tr v-cloak v-for="coin in utilCoins">
-                <td>{{ coin.symbol }}</td>
+                <td>
+                  <!-- cointest -->
+                  <div class="skill-icon orange">
+                      <div class="coin front">
+                        <div class="icon"></div>
+                      </div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin"></div>
+                      <div class="coin back">
+                        <div class="icon"></div>
+                      </div>
+                      <div class="coin-wedge"></div>
+                    </div>
+                  <!-- -->
+                  {{ coin.symbol }}</td>
 
                 <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
                   <span v-if="coin.quotes.USD.percent_change_24h > 0"></span>{{ coin.quotes.USD.price }}

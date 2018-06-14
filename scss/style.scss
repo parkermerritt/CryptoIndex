@@ -210,3 +210,138 @@ main {
   color: white;
   font-size: 30px;
 }
+
+
+
+
+
+
+/* Coins codepen */
+
+$red : #DD381D;
+$green : #7EB530;
+$blue : #1CAFF6;
+$gray : #F0F0F0;
+
+$coin-layers : 10;
+$coin-layer-spacing : 1px;
+
+$duration : 1s;
+$bounce : cubic-bezier(.2,.7,.4,1.5);
+
+
+html, body { height: 100%; }
+body {
+  height: 100%;
+  overflow: hidden;
+  padding: 30px;
+  background: #e9e9e9;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 60px);
+  background: white;
+  box-shadow: 0 0 25px rgba(0,0,0,.08);
+  border-radius: 10px;
+}
+
+.skill-icon {
+  position: relative;
+  width: 85px;
+  height: 85px;
+  margin: 15px;
+  transform: perspective(400);
+  transform-style: preserve-3d;
+  transform-origin:
+    center
+    center
+    (($coin-layers/2) * -$coin-layer-spacing);
+  transition: transform $duration $bounce;
+  cursor: pointer;
+
+  main:hover & {
+    transform:
+      perspective(400)
+      rotateY(-180deg);
+  }
+}
+
+
+.coin, .coin-wedge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: currentColor;
+}
+
+.coin {
+  left: 0;
+  right: 0;
+  border-radius: 100px;
+
+  &:empty {
+    box-shadow: inset 0 0 0 85px rgba(0,0,0,.3);
+    pointer-events: none;
+  }
+
+  @for $i from 2 through $coin-layers {
+    &:nth-child(#{$i}) {
+      transform:
+        translateZ(-$i * $coin-layer-spacing);
+    }
+  }
+}
+
+.coin-wedge {
+  box-shadow: inset 0 0 0 85px rgba(0,0,0,.3);
+  left: 50%;
+  width: $coin-layers * $coin-layer-spacing;
+  transform: rotateY(90deg);
+  transform-origin: left center;
+  background: currentColor;
+}
+
+.icon {
+  width: 55px;
+  height: 55px;
+  background: url(https://d7mj4aqfscim2.cloudfront.net/images/skill-icons-unlocked.svg);
+  background-size: 550px 550px;
+  background-position: inherit;
+  margin: 15px 0 0 15px;
+
+  .front & { transform: translateZ(1px); }
+  .last & { transform: translateZ(-1px); }
+}
+
+.red {
+  color: $red;
+  .icon { background-position: 440px 0; }
+}
+.blue {
+  transition-delay: $duration * .075;
+  color: $blue;
+
+  .icon { background-position: 275px 0; }
+}
+.green {
+  transition-delay: $duration * .15;
+  color: $green;
+
+  .icon { background-position: 440px 330px; }
+}
+.gray {
+  transition-delay: $duration * .225;
+  color: $gray;
+
+  .coin:empty {
+    box-shadow: inset 0 0 0 85px rgba(0,0,0,.2);
+  }
+  .icon {
+    background-image: url(https://d7mj4aqfscim2.cloudfront.net/images/skill-icons-locked.svg);
+    background-position: 220px 0;
+  }
+}
