@@ -63,8 +63,13 @@ td img {
 
 td {
   font-size: 15px;
-  line-height: 38px;
+  line-height: 40px;
   padding-right: 10px;
+
+}
+
+.chart-info {
+  font-weight: bold;
 }
 
 
