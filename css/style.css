@@ -69,6 +69,7 @@ td {
 
 .pricefont {
     font-size:15px;
+    font-weight: 600;
 }
 
 .chart-info {
@@ -337,10 +338,10 @@ td:hover .skill-icon {
 .icon {
   width: 40px;
   height: 40px;
-  background: url(img/CoinSkillIcons.png);
-  background-size: 550px 550px;
+  background: url("../img/CoinSkillIcons.png");
+  background-size: 340px 340px;
   background-position: inherit;
-  margin: 15px 0 0 15px;
+  margin: 0 0 0 0;
 }
 .front .icon {
   -webkit-transform: translateZ(1px);
@@ -352,12 +353,11 @@ td:hover .skill-icon {
 }
 
 .red {
-  color: #63676d;
+  color: #a6aab2;
 }
 .red .icon {
-  background-position: 440px 0;
-  background-image: url(CoinSkillIcons.png);
-
+  background-position: 277px 5px;
+  background-image: url("../img/CoinSkillIcons.png");
 }
 
 .blue {
@@ -365,7 +365,9 @@ td:hover .skill-icon {
   color: #1CAFF6;
 }
 .blue .icon {
-  background-position: 275px 0;
+  background-image: url("../img/CoinSkillIcons.png");
+  background-position: 203px 2px;
+  background-size: 400px 400px;
 }
 
 .green {
@@ -373,7 +375,9 @@ td:hover .skill-icon {
   color: #ffffff;
 }
 .green .icon {
-  background-position: 440px 330px;
+  background-image: url("../img/CoinSkillIcons.png");
+  background-position: 282px 4px;
+  background-size: 400px 400px;
 }
 
 .orange {
@@ -384,6 +388,8 @@ td:hover .skill-icon {
   box-shadow: inset 0 0 0 85px rgba(0, 0, 0, 0.2);
 }
 .orange .icon {
-  background-image: url(img/CoinSkillIcons.png);
-  background-position: 220px 0;
+  background-image: url("../img/CoinSkillIcons.png");
+  background-position: 144px 4px;
+  background-size: 350px 350px;
+
 }
