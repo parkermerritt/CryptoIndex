@@ -73,7 +73,7 @@ let app = new Vue({
           this.coins = resp.data.data;
           console.log(this.coins);
 
-          for (var i = 0; i < 5; i++) {
+          for (var i = 0; i < 4; i++) {
             this.privCoins.push(this.coins[privIds[i]]);
             this.currCoins.push(this.coins[currIds[i]]);
             this.exCoins.push(this.coins[exIds[i]]);
