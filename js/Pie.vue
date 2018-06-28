@@ -1,6 +1,6 @@
 <template>
-  <div id = "pie">
-  <p>{{ greeting }} World!</p>
+  <div id = "pie" class="b">
+  <div class="b">{{ greeting }} World!</div>
 </div>
 </template>
 
@@ -13,3 +13,12 @@ module.exports = {
   }
 }
 </script>
+
+<style>
+
+.b {
+color: black;
+font-weight: 100px;
+}
+
+</style>
