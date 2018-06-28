@@ -2,7 +2,7 @@
   "name": "cryptoindex",
   "version": "1.0.0",
   "description": "cryptoasset index",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
