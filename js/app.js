@@ -1,8 +1,26 @@
+import Vue from 'vue';
+import Pie from './Pie.vue';
+console.log(Vue);
+console.log(Pie);
+
+
+Vue.config.productionTip = false
+
+/* eslint-disable no-new */
+new Vue({
+  el: '#pie',
+  /*template: '<Pie/>',
+  components: { Pie }*/
+  render: h=>h(Pie)
+})
+
+
 /**
  * Our Vue.js application.
  *
  * This manages the entire front-end website.
  */
+
 
 // The API we're using for grabbing metadata about each cryptocurrency
 // (including logo images). The service can be found at:
@@ -61,12 +79,12 @@ let app = new Vue({
     getCoins: function() {
       let self = this;
 
-      privIds = [328,1437,131,693,1169,2044];
-      currIds = [1,2,52,1831,1168,512,1720];
-      exIds = [1839,1934,2087,1521,1274,2496];
-      resIds = [1455,291,1042,2299,1984,2496];
-      gasIds = [1027,1765,1376,1321,2010,2099];
-      utilIds = [1104,1958,1808,1896,1759,1925];
+      var privIds = [328,1437,131,693,1169,2044];
+      var currIds = [1,2,52,1831,1168,512,1720];
+      var exIds = [1839,1934,2087,1521,1274,2496];
+      var resIds = [1455,291,1042,2299,1984,2496];
+      var gasIds = [1027,1765,1376,1321,2010,2099];
+      var utilIds = [1104,1958,1808,1896,1759,1925];
 
       axios.get(COINMARKETCAP_API_URI + "/v2/ticker/")
         .then((resp) => {
