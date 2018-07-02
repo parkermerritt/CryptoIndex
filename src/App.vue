@@ -1,13 +1,23 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <!--<img src="./assets/logo.png">-->
+    <card></card>
+    <card></card>
+    <card></card>
+    <card></card>
+    <card></card>
+    <card></card>
+    <!-- <router-view/> -->
   </div>
 </template>
 
 <script>
+import Card from './components/Card'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Card
+  }
 }
 </script>
 
