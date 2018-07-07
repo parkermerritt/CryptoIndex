@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Card from './components/Card'
+import Card from './components/Card4'
 export default {
   name: 'App',
   components: {

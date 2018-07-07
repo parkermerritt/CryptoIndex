@@ -1,15 +1,13 @@
 <template>
 
+<label>
+<input type="checkbox" />
   <div class="card">
 
-    <div class="card__flipper">
-
-      <div v-bind:class="[isFlipped ? 'front-click' : 'card__front']" @click="toggleClass()">
+      <div class="card__front">
 
         <p class="card__name"><span>Privacy</span><br>Coins</p>
-
             <table class="table">
-
                 <thead class="chart-info">
                   <tr>
                     <td>Symbol</td>
@@ -22,11 +20,12 @@
               </table>
 
       </div>
-      <div v-bind:class="[isFlipped ?  'card__back' : 'back-click']" @click="toggleClass()">
+      <div class="card__back">
 
       </div>
-    </div>
+
   </div>
+</label>
 
 </template>
 <!-- Card template Javascript -->
@@ -193,19 +192,14 @@ td {
 .card:last-child {
   margin-right: 0;
 }
-/*.card__flipper {
-  cursor: pointer;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-}
+
 
 /* Test Code */
 .card .back-click {
   cursor: pointer;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  /*-webkit-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
   -o-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
@@ -242,13 +236,12 @@ td {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
           backface-visibility: hidden;
-          z-index: 2;
 
-  /*-webkit-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
   -o-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
-  transform: rotateY(0deg);*/
+  transform: rotateY(0deg);
   transition: all 3s cubic-bezier(0.23, 1, 0.32, 1);
 
 }
@@ -262,27 +255,12 @@ td {
   -o-transform: rotateY(-180deg);
   -ms-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
-  /*transition: all 3s cubic-bezier(0.23, 1, 0.32, 1);*/
+  transition: all 3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 /* */
 
 .card__front, .card__back {
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: 3s;
-  -webkit-transform-style: preserve-3d;
-  -moz-transition: 3s;
-  -moz-transform-style: preserve-3d;
-  -o-transition: 3s;
-  -o-transform-style: preserve-3d;
-  -ms-transition: 3s;
-  -ms-transform-style: preserve-3d;
-  transition: 3s;
-  transform-style: preserve-3d;
-
 
   position: absolute;
   /* -webkit-backface-visibility: hidden;
@@ -298,8 +276,8 @@ td {
   overflow: hidden;
 }*/
 .card__back {
-  /*-webkit-transform: rotateY(-180deg) scale(1.1);
-          transform: rotateY(-180deg) scale(1.1);*/
+  -webkit-transform: rotateY(-180deg) scale(1.1);
+          transform: rotateY(-180deg) scale(1.1);
   background: #141414;
   display: flex;
   flex-flow: column wrap;
