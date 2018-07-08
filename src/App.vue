@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <!--<img src="./assets/logo.png">-->
-    <card></card>
-    <card></card>
-    <card></card>
-    <card></card>
-    <card></card>
-    <card></card>
+    <card name1="Privacy" name2="Coins"></card>
+    <card name1="Crypto" name2="Currencies"></card>
+    <card name1="Token" name2="Exchanges"></card>
+    <card name1="Computational" name2="Resources"></card>
+    <card name1="Platform" name2="Gas"></card>
+    <card name1="Utility" name2="Tokens"></card>
     <!-- <router-view/> -->
   </div>
 </template>

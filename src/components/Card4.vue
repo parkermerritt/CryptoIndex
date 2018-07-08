@@ -3,7 +3,7 @@
     <vue-flip :active-click="true" width="30%" class="card">
 <!-- Card Front -->
       <div class="front" slot="front">
-        <p class="card__name"><span>Privacy</span><br>Coins</p>
+        <p class="card__name"><span>{{name1}}</span><br>{{name2}}</p>
         <cardtable></cardtable>
       </div>
 <!-- Card Back -->
@@ -27,6 +27,10 @@ export default {
   components: {
     'vue-flip': VueFlip,
     'cardtable': CardTable
+  },
+  props: {
+    name1: String,
+    name2: String
   }
 }
 
