@@ -16,9 +16,10 @@
     "deploy": "node ./node_modules/vue-gh-pages/index.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "vue": "^2.5.2",
-    "vue-info-card": "^0.1.1",
-    "vue-router": "^3.0.1"
+    "vue-axios": "^2.1.2",
+    "vue-info-card": "^0.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -74,6 +75,7 @@
     "vue-flip": "^0.2.2",
     "vue-jest": "^1.0.2",
     "vue-loader": "^13.3.0",
+    "vue-router": "^3.0.1",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
     "vuex": "^3.0.1",
