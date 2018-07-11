@@ -1,95 +1,177 @@
 {
-   "bitcoin": {
-
+   "1": {
+     "coin": "bitcoin",
+     "id": 1,
+     "class": "currency",
+     "class-share": 0
    },
-   "bitcoin-cash": {
-
+   "1831": {
+     "coin": "bitcoin-cash",
+     "id": 1831,
+     "class": "currency",
+     "class-share": 0
    },
-   "bitcoin-gold": {
-
+   "2083": {
+     "coin": "bitcoin-gold",
+     "id": 2083,
+     "class": "currency",
+     "class-share": 0
    },
-   "ethereum": {
-
+   "1027": {
+     "coin": "ethereum",
+     "id": 1027,
+     "class": "gas",
+     "class-share": 0
    },
-   "ripple": {
-
+   "52": {
+     "coin": "ripple",
+     "id": 52,
+     "class": "currency",
+     "class-share": 0
    },
-   "litecoin": {
-
+   "2": {
+     "coin": "litecoin",
+     "id": 2,
+     "class": "currency",
+     "class-share": 0
    },
-   "ethereum-classic": {
-
+   "1321": {
+     "coin": "ethereum-classic",
+     "id": 1321,
+     "class": "gas",
+     "class-share": 0
    },
-   "dash": {
-
+   "131": {
+     "coin": "dash",
+     "id": 131,
+     "class": "private",
+     "class-share": 0
    },
    "nem": {
-
+     "id": 873,
+     "class": "gas",
+     "class-share": 0
    },
    "iota": {
-
+     "id": 1720,
+     "class": "currency",
+     "class-share": 0
    },
    "monero": {
-
+     "id": 873,
+     "class": "private",
+     "class-share": 0
    },
    "eos": {
+     "id": 873,
+     "class": "gas",
+     "class-share": 0
 
    },
    "stratis": {
+     "id": 873,
+     "class": "resource",
+     "class-share": 0
 
    },
    "bitshares": {
-
-   },
-   "bitconnect": {
+     "id": 873,
+     "class": "none",
+     "class-share": 0
 
    },
    "tether": {
+     "id": 873,
+     "class": "none",
+     "class-share": 0
 
    },
    "zcash": {
-
+     "id": 873,
+     "class": "private",
+     "class-share": 0
    },
    "neo": {
-
+     "id": 873,
+     "class": "gas",
+     "class-share": 0
    },
    "bytecoin-bcn": {
+     "id": 873,
+     "class": "none",
+     "class-share": 0
 
    },
    "veritaseum": {
+     "id": 873,
+     "class": "none",
+     "class-share": 0
 
    },
    "steem": {
+     "id": 873,
+     "class": "utility",
+     "class-share": 0
 
    },
    "waves": {
+     "id": 873,
+     "class": "gas",
+     "class-share": 0
 
    },
    "qtum": {
+     "id": 873,
+     "class": "gas",
+     "class-share": 0
 
    },
    "iconomi": {
+     "id": 873,
+     "class": "gas",
+     "class-share": 0
 
    },
    "gnosis-gno": {
+     "id": 873,
+     "class": "utility",
+     "class-share": 0
 
    },
    "status": {
+     "id": 873,
+     "class": "utility",
+     "class-share": 0
 
    },
    "siacoin": {
+     "id": 873,
+     "class": "resource",
+     "class-share": 0
 
    },
    "golem-network-tokens": {
+     "id": 873,
+     "class": "resource",
+     "class-share": 0
 
    },
    "stellar": {
+     "id": 873,
+     "class": "currency",
+     "class-share": 0
 
    },
    "cardano": {
+     "id": 873,
+     "class": "gas",
+     "class-share": 0
 
    },
    "undefined": {
+     "id": 873,
+     "class": "resource",
+     "class-share": 0
 
    }
 }

@@ -5,29 +5,26 @@
         <td>Symbol</td>
         <td>Price (USD)</td>
         <td>Change </td>
+        <td>Class </td>
       </tr>
     </thead>
     <tbody>
 
-                <div>
-
-                  <tr v-cloak v-for="cryptoCurrency in firstThreeCryptoCurrencies" :key="cryptoCurrency">
-                    <td>
-                      {{  cryptoCurrency.name  }}
-                    </td>
-                    <td>
-                      {{ cryptoCurrency.symbol }}
+                  <tr v-cloak v-for="(cryptoCurrency,index) in firstThreeCryptoCurrencies" :key="index">
+                    <td :key="cryptoCurrency.id">
+                      {{  cryptoCurrency.symbol  }}
                     </td>
 
                     <td class="pricefont" v-bind:style="getColor(cryptoCurrency.quotes.USD.percent_change_24h)">
                       <span v-if="cryptoCurrency.quotes.USD.percent_change_24h > 0"></span>{{ cryptoCurrency.quotes.USD.price }}
-                    </td><!--
+                    </td>
 
                     <td class="pricefont" v-bind:style="getColor(cryptoCurrency.quotes.USD.percent_change_24h)">
-                    </td>-->
+                      <span v-if="cryptoCurrency.quotes.USD.percent_change_24h > 0">+</span>{{ cryptoCurrency.quotes.USD.percent_change_24h }}%
+                    </td>
+                    <td> {{cryptoCurrency.class}} </td>
 
                   </tr>
-                </div>
 
                   <tr v-cloak></tr>
 
@@ -93,6 +90,13 @@ export default {
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
+[v-cloak] {
+  display: none;
+}
 
 table {
   width: 99%;

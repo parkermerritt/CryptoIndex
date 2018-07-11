@@ -1,12 +1,16 @@
 <template>
 
     <vue-flip :active-click="true" width="30%" class="card">
+
 <!-- Card Front -->
+
       <div class="front" slot="front">
         <p class="card__name"><span>{{name1}}</span><br>{{name2}}</p>
         <cardtable></cardtable>
       </div>
+
 <!-- Card Back -->
+
       <div slot="back" class="under">
           <p><span>Test Text</span></p>
       </div>
@@ -90,6 +94,7 @@ body {
   width: calc(100% * .3333 - 30px + .3333 * 30px) !important;
   height: 340px;
   margin: 0 30px 30px 0;
+  /* Prevents jerky motion when no longer hovering */
   transition: all 1s;
   -webkit-transition: all 1s;
 }
