@@ -9,11 +9,11 @@
     </thead>
     <tbody>
 
-                <div v-for="(cryptoCurrency,index) in firstThreeCryptoCurrencies" :key="cryptoCurrency.id" >
+                <div>
 
-                  <tr>
+                  <tr v-cloak v-for="cryptoCurrency in firstThreeCryptoCurrencies" :key="cryptoCurrency">
                     <td>
-                      {{ index }}
+                      {{  cryptoCurrency.name  }}
                     </td>
                     <td>
                       {{ cryptoCurrency.symbol }}
