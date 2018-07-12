@@ -8,7 +8,7 @@
     <card cl="resource" name1="Computational" name2="Resources"></card>
     <card cl="privacy" name1="Privacy" name2="Coins"></card>
     <card cl="utility" name1="Utility" name2="Tokens"></card>
-    <!-- <router-view/> -->
+    <router-view/>
   </div>
 </template>
 
