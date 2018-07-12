@@ -5,8 +5,8 @@
 
       <tr>
         <!-- <td class="classAvgs">TOTAL:</td> -->
-        <td colspan="2">TOTAL CAP <span v-bind:style="getColor(this.myReturn)">${{(Math.round( this.totalClassCap) / 1000000000).toFixed(2)}} B</span></td>
-        <td colspan="1">24H <span v-bind:style="getColor(this.myReturn)">{{myReturn}}%</span></td>
+        <td colspan="2">TOTAL CAP &nbsp;<span v-bind:style="getColor(this.myReturn)">${{(Math.round( this.totalClassCap) / 1000000000).toFixed(2)}} B</span></td>
+        <td colspan="1">24H &nbsp;<span v-bind:style="getColor(this.myReturn)">{{myReturn}}%</span></td>
         <td colspan="1"> {{ this.quant }} assets </td>
 
       </tr>
@@ -196,7 +196,7 @@ thead tr:nth-child(1) td {
 }
 
 thead tr:nth-child(2) td {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 5000;
   line-height: 36px;
 }
@@ -208,9 +208,9 @@ tbody tr td:nth-child(1) {
 }
 
 tbody tr td:nth-child(2) {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 5000;
-  line-height: 32px;
+  line-height: 28px;
 }
 
 </style>
