@@ -4,7 +4,9 @@
      "id": 1,
      "class": "currency",
      "class-share": 0,
-     "color": "#FF9900"
+     "color": "#FF9900",
+     "picpos": "144px 4px",
+     "picsize": "350px 350px"
    },
    "2": {
      "coin": "litecoin",
@@ -101,7 +103,9 @@
      "coin": "binance-coin",
      "id": 1839,
      "class": "exchange",
-     "class-share": 0
+     "class-share": 0,
+     "picpos": "282px 4px;",
+     "picsize": "400px 400px"
    },
    "1934": {
      "coin": "loopring",

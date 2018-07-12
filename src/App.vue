@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <!--<img src="./assets/logo.png">-->
     <card cl="currency" name1="Crypto" name2="Currencies"></card>
     <card cl="gas" name1="Platform" name2="Gas"></card>
@@ -13,10 +14,13 @@
 
 <script>
 import Card from './components/Card'
+import Header from './components/Header'
+
 export default {
   name: 'App',
   components: {
-    Card
+    Card,
+    Header
   }
 }
 </script>

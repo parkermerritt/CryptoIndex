@@ -1,6 +1,6 @@
 <template>
   <!-- cointest -->
-                  <div class="skill-icon orange">
+                  <div class="skill-icon color">
                         <div class="icon"></div>
                         <div class="coin front">
                         </div>
@@ -23,7 +23,16 @@
 
 <script>
 export default {
-  name: 'coin'
+  name: 'coin',
+  props: {
+    pos: String,
+    size: String
+  },
+  data () {
+    return {
+      col: 'none'
+    }
+  }
 }
 </script>
 
@@ -34,7 +43,7 @@ export default {
   width: 45px;
   height: 45px;
   margin: 0px;
-  margin-bottom: -10px;
+  margin-bottom: -5px;
   margin-left: 21%;
   -webkit-transform: perspective(400);
           transform: perspective(400);
@@ -134,46 +143,12 @@ td:hover .skill-icon {
           transform: translateZ(-1px);
 }
 
-.red {
-  color: #a6aab2;
-}
-.red .icon {
-  background-position: 277px 5px;
-  background-image: url("../assets/CoinSkillIcons.png");
-}
-
-.blue {
+.color {
   transition-delay: 0.075s;
-  color: #1CAFF6;
-}
-.blue .icon {
   background-image: url("../assets/CoinSkillIcons.png");
-  background-position: 203px 2px;
-  background-size: 400px 400px;
 }
-
-.green {
-  transition-delay: 0.15s;
-  color: #ffffff;
-}
-.green .icon {
-  background-image: url("../assets/CoinSkillIcons.png");
-  background-position: 282px 4px;
-  background-size: 400px 400px;
-}
-
-.orange {
-  transition-delay: 0.225s;
-  color: #FF9900;
-}
-.orange .coin:empty {
+.color:empty {
   box-shadow: inset 0 0 0 85px rgba(0, 0, 0, 0.2);
-}
-.orange .icon {
-  background-image: url("../assets/CoinSkillIcons.png");
-  background-position: 144px 4px;
-  background-size: 350px 350px;
-
 }
 
 </style>

@@ -26,8 +26,10 @@
 
                   <tr v-cloak v-for="(cryptoCurrency,index) in firstThreeCryptoCurrencies" :key="index" :cryptoCurrency-class.sync="cl" >
                     <td :key="cryptoCurrency.id">
-                    <coin></coin>
+
+                      <!--<coin :class="{ getCoinColor }"></coin>-->
                       {{  cryptoCurrency.symbol  }}
+
                     </td>
 
                     <td class="pricefont" v-bind:style="getColor(cryptoCurrency.quotes.USD.percent_change_24h)">
@@ -113,6 +115,12 @@ export default {
       return thisClass
       /* return this.sharedState.cryptoCurrencies.data */
     }
+    /* getCoinColor: (cryptoCurrency) => {
+      console.log('color')
+      console.log(cryptoCurrency.color)
+
+      return cryptoCurrency.color
+    } */
   },
 
   methods: {
@@ -129,9 +137,24 @@ export default {
     },
     getColor: (num) => {
       return (num > 0.00 ? 'color:#42f456;' : 'color:#ff7a7a;')
+    },
+    getCoinColor: (cryptoCurrency) => {
+      console.log('color')
+      console.log(cryptoCurrency.color)
+      return cryptoCurrency.color
+    }
+  },
+  directives: {
+    col: {
+      bind: function (el, binding) {
+        var s = JSON.stringify
+        el.color = s(binding.color)
+        console.log(el.col)
+      }
     }
   }
 }
+
 </script>
 
 <style>
@@ -154,7 +177,7 @@ table {
 
 td {
   font-size: 13px;
-  line-height: 30px;
+  line-height: 26px;
   vertical-align: top;
 }
 
@@ -173,9 +196,21 @@ thead tr:nth-child(1) td {
 }
 
 thead tr:nth-child(2) td {
+  font-size: 15px;
+  font-weight: 5000;
+  line-height: 36px;
+}
+
+tbody tr td:nth-child(1) {
   font-size: 14px;
   font-weight: 5000;
-  line-height: 30px;
+  line-height: 32px;
+}
+
+tbody tr td:nth-child(2) {
+  font-size: 16px;
+  font-weight: 5000;
+  line-height: 32px;
 }
 
 </style>
