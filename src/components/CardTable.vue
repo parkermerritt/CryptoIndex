@@ -12,12 +12,11 @@
       </tr>
 
       <tr>
-
-        <td>SYMBOL</td>
-        <td>PRICE (USD)</td>
-        <td>CHANGE</td>
-        <td>SHARE</td>
-        <!-- <td>Class </td> -->
+            <td v-bind:class="tc">SYMBOL</td>
+            <td v-bind:class="tc">PRICE (USD)</td>
+            <td v-bind:class="tc">CHANGE</td>
+            <td v-bind:class="tc">SHARE</td>
+            <!-- <td>Class </td> -->
 
       </tr>
 
@@ -71,7 +70,8 @@ export default {
     'coin': Coin
   },
   props: {
-    cl: String
+    cl: String,
+    tc: String
   },
   data () {
     return {
@@ -158,6 +158,8 @@ export default {
 </script>
 
 <style>
+@import '../assets/style.css';
+
 * {
   box-sizing: border-box;
 }
@@ -172,7 +174,7 @@ table {
   margin-right: 9px;
   z-index: 2;
   position: absolute;
-
+  border-collapse: collapse;
 }
 
 td {
@@ -192,19 +194,21 @@ td {
 
 thead tr:nth-child(1) td {
   font-size: 12px;
-  line-height: 14px;
-}
+  line-height: 20px;
 
+}
 thead tr:nth-child(2) td {
   font-size: 14px;
-  font-weight: 5000;
-  line-height: 36px;
+  line-height: 28px;
+  border: solid;
+  border-width: 2px 0;
+  border-top: none;
 }
 
 tbody tr td:nth-child(1) {
   font-size: 14px;
   font-weight: 5000;
-  line-height: 32px;
+  line-height: 34px;
 }
 
 tbody tr td:nth-child(2) {
@@ -212,5 +216,4 @@ tbody tr td:nth-child(2) {
   font-weight: 5000;
   line-height: 28px;
 }
-
 </style>

@@ -3,7 +3,7 @@
 <!-- Card Front -->
       <div class="front" slot="front">
         <p class="card__name"><span>{{name1}}</span><br>{{name2}}<br><span><p>I N D E X</p></span></p>
-        <cardtable v-bind:cl="cl"></cardtable>
+        <cardtable v-bind:tc="tc" v-bind:cl="cl"></cardtable>
       </div>
 <!-- Card Back -->
       <div slot="back" class="under">
@@ -28,7 +28,8 @@ export default {
   props: {
     name1: String,
     name2: String,
-    cl: String
+    cl: String,
+    tc: String
   }
 }
 </script>
@@ -186,7 +187,7 @@ body {
 }
 
 
-@media (min-width: 701px ) and (max-width: 1000px) {
+@media (min-width: 701px ) and (max-width: 1100px) {
   .card[style] {
     width: 46% !important;
     height: 325px !important;
