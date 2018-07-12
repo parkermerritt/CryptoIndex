@@ -2,7 +2,7 @@
     <vue-flip :active-click="true" width="30%" class="card">
 <!-- Card Front -->
       <div class="front" slot="front">
-        <p class="card__name"><span>{{name1}}</span><br>{{name2}}</p>
+        <p class="card__name"><span>{{name1}}</span><br>{{name2}}<br><span><p>I N D E X</p></span></p>
         <cardtable v-bind:cl="cl"></cardtable>
       </div>
 <!-- Card Back -->
@@ -50,7 +50,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 340px;
+  height: 350px;
   cursor: pointer;
 }
 
@@ -99,6 +99,11 @@ body {
 
 .card__name span {
   font-size: 19px;
+}
+
+.card__name span p {
+  font-size: 14px;
+  line-height: 0;
 }
 
 .card:first-child .front {

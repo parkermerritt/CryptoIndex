@@ -3,18 +3,38 @@
      "coin": "bitcoin",
      "id": 1,
      "class": "currency",
-     "class-share": 0
+     "class-share": 0,
+     "color": "#FF9900"
    },
-   "1831": {
-     "coin": "bitcoin-cash",
-     "id": 1831,
+   "2": {
+     "coin": "litecoin",
+     "id": 2,
+     "class": "currency",
+     "class-share": 0,
+     "color": "silver"
+   },
+   "52": {
+     "coin": "ripple",
+     "id": 52,
      "class": "currency",
      "class-share": 0
    },
-   "2083": {
-     "coin": "bitcoin-gold",
-     "id": 2083,
-     "class": "currency",
+   "131": {
+     "coin": "dash",
+     "id": 131,
+     "class": "privacy",
+     "class-share": 0
+   },
+   "291": {
+     "coin": "maidsafecoin",
+     "id": 291,
+     "class": "resource",
+     "class-share": 0
+   },
+   "693": {
+     "coin": "verge",
+     "id": 693,
+     "class": "privacy",
      "class-share": 0
    },
    "1027": {
@@ -23,16 +43,16 @@
      "class": "gas",
      "class-share": 0
    },
-   "52": {
-     "coin": "ripple",
-     "id": 52,
-     "class": "currency",
+   "1104": {
+     "coin": "augur",
+     "id": 1104,
+     "class": "utility",
      "class-share": 0
    },
-   "2": {
-     "coin": "litecoin",
-     "id": 2,
-     "class": "currency",
+   "1169": {
+     "coin": "pivx",
+     "id": 1169,
+     "class": "privacy",
      "class-share": 0
    },
    "1321": {
@@ -41,9 +61,81 @@
      "class": "gas",
      "class-share": 0
    },
-   "131": {
-     "coin": "dash",
-     "id": 131,
+   "1521": {
+     "coin": "komodo",
+      "id": 1521,
+      "class": "privacy",
+      "class-share": 0
+    },
+    "1727": {
+      "coin": "bancor",
+      "id": 1727,
+      "class": "exchange",
+      "class-share": 0
+    },
+    "1757": {
+      "coin": "funfair",
+      "id": 1757,
+      "class": "utility",
+      "class-share": 0
+    },
+    "1776": {
+      "coin": "monaco",
+      "id": 1776,
+      "class": "utility",
+      "class-share": 0
+    },
+    "1808": {
+      "coin": "omisego",
+      "id": 1808,
+      "class": "utility",
+      "class-share": 0
+    },
+   "1831": {
+     "coin": "bitcoin-cash",
+     "id": 1831,
+     "class": "currency",
+     "class-share": 0
+   },
+   "1839": {
+     "coin": "binance-coin",
+     "id": 1839,
+     "class": "exchange",
+     "class-share": 0
+   },
+   "1934": {
+     "coin": "loopring",
+     "id": 1934,
+     "class": "exchange",
+     "class-share": 0
+   },
+   "1966": {
+     "coin": "decentraland",
+     "id": 1966,
+     "class": "utility",
+     "class-share": 0
+   },
+   "2083": {
+     "coin": "bitcoin-gold",
+     "id": 2083,
+     "class": "currency",
+     "class-share": 0
+   },
+   "2087": {
+     "coin": "kucoin-shares",
+     "id": 2087,
+     "class": "exchange",
+     "class-share": 0
+   },
+   "2299": {
+     "coin": "aelf",
+     "id": 2299,
+     "class": "resource",
+     "class-share": 0
+   },
+   "2575": {
+     "coin": "bitcoin-private",
+     "id": 2575,
      "class": "privacy",
      "class-share": 0
    },
@@ -79,96 +171,99 @@
      "class-share": 0
 
    },
-   "bitshares": {
-     "id": 873,
+   "463": {
+     "coin": "bitshares",
+     "id": 463,
      "class": "none",
      "class-share": 0
 
    },
-   "tether": {
-     "id": 873,
+   "825": {
+     "coin": "tether",
+     "id": 825,
      "class": "none",
      "class-share": 0
 
    },
-   "zcash": {
-     "id": 873,
-     "class": "private",
+   "1437": {
+     "coin": "zcash",
+     "id": 1437,
+     "class": "privacy",
      "class-share": 0
    },
-   "neo": {
-     "id": 873,
+   "1376": {
+     "coin": "neo",
+     "id": 1376,
      "class": "gas",
      "class-share": 0
    },
-   "bytecoin-bcn": {
-     "id": 873,
+   "372": {
+     "coin": "bytecoin-bcn",
+     "id": 372,
+     "class": "none",
+     "class-share": 0
+   },
+   "1710": {
+     "coin": "veritaseum",
+     "id": 1710,
      "class": "none",
      "class-share": 0
 
    },
-   "veritaseum": {
-     "id": 873,
-     "class": "none",
-     "class-share": 0
-
-   },
-   "steem": {
-     "id": 873,
+   "1230": {
+     "coin": "steem",
+     "id": 1230,
      "class": "utility",
      "class-share": 0
 
    },
-   "waves": {
-     "id": 873,
+   "1274": {
+     "coin": "waves",
+     "id": 1274,
      "class": "gas",
      "class-share": 0
 
    },
-   "qtum": {
-     "id": 873,
+   "1684": {
+     "coin": "qtum",
+     "id": 1684,
      "class": "gas",
      "class-share": 0
 
    },
-   "iconomi": {
-     "id": 873,
+   "2099": {
+     "coin": "icon",
+     "id": 2099,
      "class": "gas",
      "class-share": 0
-
    },
-   "gnosis-gno": {
-     "id": 873,
+   "1759": {
+     "coin": "status",
+     "id": 1759,
      "class": "utility",
      "class-share": 0
-
    },
-   "status": {
-     "id": 873,
-     "class": "utility",
-     "class-share": 0
-
-   },
-   "siacoin": {
-     "id": 873,
+   "1042": {
+     "coin": "siacoin",
+     "id": 1042,
      "class": "resource",
      "class-share": 0
-
    },
-   "golem-network-tokens": {
-     "id": 873,
+   "1455": {
+     "coin":  "golem-network-tokens",
+     "id": 1455,
      "class": "resource",
      "class-share": 0
-
    },
-   "stellar": {
-     "id": 873,
+   "512": {
+     "coin" :"stellar",
+     "id": 512,
      "class": "currency",
      "class-share": 0
-
    },
-   "cardano": {
-     "id": 873,
+   "2010": {
+     "coin": "cardano",
+     "id": 2010,
      "class": "gas",
      "class-share": 0
 

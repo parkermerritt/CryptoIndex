@@ -2,20 +2,22 @@
   <table>
 
     <thead class="chart-info">
+
       <tr>
-        <td class="classAvgs">AVGS:</td>
+        <td class="classAvgs">TOTAL:</td>
         <td>CAP <span v-bind:style="getColor(this.myReturn)">${{(Math.round( this.totalClassCap) / 1000000000).toFixed(2)}} B</span></td>
         <td>24H <span v-bind:style="getColor(this.myReturn)">{{myReturn}}%</span></td>
-
+        <td> {{ this.quant }} assets </td>
       </tr>
 
       <tr>
-        <td>- Symbol -</td>
-        <td>- Price (USD) -</td>
-        <td>- Change -</td>
-        <td>- Share -</td>
 
+        <td>Symbol</td>
+        <td>Price (USD)</td>
+        <td>Change</td>
+        <td>Share</td>
         <!-- <td>Class </td> -->
+
       </tr>
 
     </thead>
@@ -67,7 +69,8 @@ export default {
       sharedState: store.state,
       isOpenedInIFrame: false,
       myReturn: 0,
-      totalClassCap: 0
+      totalClassCap: 0,
+      quant: 0
     }
   },
   created () {
@@ -87,7 +90,6 @@ export default {
         try {
           if (this.sharedState.cryptoCurrencies.data[i].class === this.cl) {
             thisClass[j] = this.sharedState.cryptoCurrencies.data[i]
-
             // eslint-disable-next-line
             this.totalClassCap = this.totalClassCap + this.sharedState.cryptoCurrencies.data[i].quotes.USD.market_cap
             // eslint-disable-next-line
@@ -96,6 +98,8 @@ export default {
             ) / 100
 
             j++
+            // eslint-disable-next-line
+            this.quant++
           }
         } catch (err) { }
       }
@@ -133,9 +137,12 @@ export default {
 }
 
 table {
-  width: 99%;
-  margin-left: 5px;
+  width: 86%;
+  margin-left: 22px;
   margin-right: 9px;
+  z-index: 2;
+  position: absolute;
+
 }
 
 td {
@@ -151,6 +158,17 @@ td {
 .pricefont {
     font-size:15px;
     font-weight: 600;
+}
+
+thead tr:nth-child(1) td {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+thead tr:nth-child(2) td {
+  font-size: 16px;
+  font-weight: 5000;
+  line-height: 35px;
 }
 
 </style>
