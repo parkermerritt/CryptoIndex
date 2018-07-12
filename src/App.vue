@@ -1,18 +1,18 @@
 <template>
   <div id="app">
     <!--<img src="./assets/logo.png">-->
-    <card name1="Privacy" name2="Coins"></card>
-    <card name1="Crypto" name2="Currencies"></card>
-    <card name1="Token" name2="Exchanges"></card>
-    <card name1="Computational" name2="Resources"></card>
-    <card name1="Platform" name2="Gas"></card>
-    <card name1="Utility" name2="Tokens"></card>
+    <card cl="privacy" name1="Privacy" name2="Coins"></card>
+    <card cl="currency" name1="Crypto" name2="Currencies"></card>
+    <card cl="exchange" name1="Token" name2="Exchanges"></card>
+    <card cl="resource" name1="Computational" name2="Resources"></card>
+    <card cl="gas" name1="Platform" name2="Gas"></card>
+    <card cl="utility" name1="Utility" name2="Tokens"></card>
     <!-- <router-view/> -->
   </div>
 </template>
 
 <script>
-import Card from './components/Card4'
+import Card from './components/Card'
 export default {
   name: 'App',
   components: {

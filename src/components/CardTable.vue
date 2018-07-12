@@ -10,7 +10,7 @@
     </thead>
     <tbody>
 
-                  <tr v-cloak v-for="(cryptoCurrency,index) in firstThreeCryptoCurrencies" :key="index">
+                  <tr v-cloak v-for="(cryptoCurrency,index) in firstThreeCryptoCurrencies" :key="index" :cryptoCurrency-class.sync="cl" >
                     <td :key="cryptoCurrency.id">
                       {{  cryptoCurrency.symbol  }}
                     </td>
@@ -43,12 +43,13 @@ console.log({state})
 console.log({cryptoCurrencies})
 
 export default {
-  props: {},
+  props: {
+    cl: String
+  },
   name: 'CardTable',
   data () {
     return {
       sharedState: store.state,
-      cryptoCurrencies: store.state.cryptoCurrencies.data,
       isOpenedInIFrame: false
     }
   },
@@ -60,8 +61,32 @@ export default {
   computed: {
     firstThreeCryptoCurrencies () {
       console.log('flag')
-      console.log(this.sharedState.cryptoCurrencies.data)
-      return this.sharedState.cryptoCurrencies.data
+      console.log(this.sharedState.cryptoCurrencies)
+      console.log(this.cl)
+      var thisClass = []
+      var j = 0
+      /* thisClass = this.cryptoCurrencies.filter(function (e) {
+        return e.class === this.cl
+      }) */
+      for (var i = 0; i < 100; i++) {
+        /* console.log(this.sharedState.cryptoCurrencies.data[i]) */
+        try {
+          if (this.sharedState.cryptoCurrencies.data[i].class === this.cl) {
+            /* console.log('Class dismissed yo')
+            console.log(this.sharedState.cryptoCurrencies.data[i].class) */
+            thisClass[j] = this.sharedState.cryptoCurrencies.data[i]
+            j++
+            console.log(j)
+          }
+        } catch (err) {
+          console.log('Rejected:')
+          console.log(i)
+        }
+      }
+      console.log('Class diss')
+      console.log(thisClass)
+      return thisClass
+      /* return this.sharedState.cryptoCurrencies.data */
     }
   },
   /*,
