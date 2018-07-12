@@ -20,7 +20,7 @@ export default {
   name: 'card',
   components: {
     'vue-flip': VueFlip,
-    'cardtable': CardTable
+    'cardtable': CardTable,
   },
   props: {
     name1: String,

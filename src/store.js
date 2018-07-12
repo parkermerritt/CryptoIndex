@@ -22,8 +22,6 @@ export const store = {
       .then((response) => {
         this.state.cryptoCurrencies = response.data
         this.state.cryptoCurrencies.length = 100
-        console.log('Hola')
-        console.log(this.state.cryptoCurrencies.data)
         var parent = this.state.cryptoCurrencies.data
         var arr = Object.keys(parent).map(function (k) { return parent[k] })
         console.log(arr)

@@ -4,18 +4,19 @@
     <thead class="chart-info">
 
       <tr>
-        <td class="classAvgs">TOTAL:</td>
-        <td>CAP <span v-bind:style="getColor(this.myReturn)">${{(Math.round( this.totalClassCap) / 1000000000).toFixed(2)}} B</span></td>
-        <td>24H <span v-bind:style="getColor(this.myReturn)">{{myReturn}}%</span></td>
-        <td> {{ this.quant }} assets </td>
+        <!-- <td class="classAvgs">TOTAL:</td> -->
+        <td colspan="2">TOTAL CAP <span v-bind:style="getColor(this.myReturn)">${{(Math.round( this.totalClassCap) / 1000000000).toFixed(2)}} B</span></td>
+        <td colspan="1">24H <span v-bind:style="getColor(this.myReturn)">{{myReturn}}%</span></td>
+        <td colspan="1"> {{ this.quant }} assets </td>
+
       </tr>
 
       <tr>
 
-        <td>Symbol</td>
-        <td>Price (USD)</td>
-        <td>Change</td>
-        <td>Share</td>
+        <td>SYMBOL</td>
+        <td>PRICE (USD)</td>
+        <td>CHANGE</td>
+        <td>SHARE</td>
         <!-- <td>Class </td> -->
 
       </tr>
@@ -25,6 +26,7 @@
 
                   <tr v-cloak v-for="(cryptoCurrency,index) in firstThreeCryptoCurrencies" :key="index" :cryptoCurrency-class.sync="cl" >
                     <td :key="cryptoCurrency.id">
+                    <coin></coin>
                       {{  cryptoCurrency.symbol  }}
                     </td>
 
@@ -52,6 +54,8 @@
 
 <script>
 import { store } from '../store.js'
+import Coin from './Coin'
+
 var state = store.state
 var cryptoCurrencies = state.cryptoCurrencies.data
 
@@ -60,10 +64,13 @@ console.log({state})
 console.log({cryptoCurrencies})
 
 export default {
+  name: 'CardTable',
+  components: {
+    'coin': Coin
+  },
   props: {
     cl: String
   },
-  name: 'CardTable',
   data () {
     return {
       sharedState: store.state,
@@ -80,9 +87,9 @@ export default {
   },
   computed: {
     firstThreeCryptoCurrencies () {
-      console.log('flag')
+      /* console.log('flag')
       console.log(this.sharedState.cryptoCurrencies)
-      console.log(this.cl)
+      console.log(this.cl) */
       var thisClass = []
       var j = 0
 
@@ -166,9 +173,9 @@ thead tr:nth-child(1) td {
 }
 
 thead tr:nth-child(2) td {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 5000;
-  line-height: 35px;
+  line-height: 30px;
 }
 
 </style>
