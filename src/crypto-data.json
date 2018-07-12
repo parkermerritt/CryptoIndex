@@ -178,7 +178,7 @@
    "463": {
      "coin": "bitshares",
      "id": 463,
-     "class": "none",
+     "class": "exchange",
      "class-share": 0
 
    },

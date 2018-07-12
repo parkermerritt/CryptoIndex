@@ -7,7 +7,7 @@
       </div>
 <!-- Card Back -->
       <div slot="back" class="under">
-          <p><span>Test Text</span></p>
+          <!-- <pie></pie> -->
       </div>
     </vue-flip>
 </template>
@@ -16,11 +16,14 @@
 /* eslint-disable */
 import VueFlip from 'vue-flip'
 import CardTable from './CardTable'
+/* import Pie from './Pie' */
+
 export default {
   name: 'card',
   components: {
     'vue-flip': VueFlip,
     'cardtable': CardTable,
+    /* 'pie' : Pie */
   },
   props: {
     name1: String,
