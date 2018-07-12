@@ -1,9 +1,8 @@
 <template>
   <!-- cointest -->
-                    <div class="skill-icon red">
+                  <div class="skill-icon orange">
                         <div class="icon"></div>
                         <div class="coin front">
-
                         </div>
                         <div class="coin"></div>
                         <div class="coin"></div>
@@ -18,7 +17,7 @@
                         </div>
 
                         <div class="coin-wedge"></div>
-                      </div>
+                    </div>
                     <!-- -->
 </template>
 
@@ -125,6 +124,7 @@ td:hover .skill-icon {
   background-position: inherit;
   margin: 0 0 0 0;
 }
+
 .front .icon {
   -webkit-transform: translateZ(1px);
           transform: translateZ(1px);
