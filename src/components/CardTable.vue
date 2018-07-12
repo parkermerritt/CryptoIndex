@@ -1,12 +1,23 @@
 <template>
   <table>
+
     <thead class="chart-info">
       <tr>
-        <td>Symbol</td>
-        <td>Price (USD)</td>
-        <td>Change </td>
-        <td>Class </td>
+        <td class="classAvgs">AVGS:</td>
+        <td>CAP <span v-bind:style="getColor(this.myReturn)">${{(Math.round( this.totalClassCap) / 1000000000).toFixed(2)}} B</span></td>
+        <td>24H <span v-bind:style="getColor(this.myReturn)">{{myReturn}}%</span></td>
+
       </tr>
+
+      <tr>
+        <td>- Symbol -</td>
+        <td>- Price (USD) -</td>
+        <td>- Change -</td>
+        <td>- Share -</td>
+
+        <!-- <td>Class </td> -->
+      </tr>
+
     </thead>
     <tbody>
 
@@ -16,19 +27,23 @@
                     </td>
 
                     <td class="pricefont" v-bind:style="getColor(cryptoCurrency.quotes.USD.percent_change_24h)">
-                      <span v-if="cryptoCurrency.quotes.USD.percent_change_24h > 0"></span>{{ cryptoCurrency.quotes.USD.price }}
+                      <span v-if="cryptoCurrency.quotes.USD.percent_change_24h > 0"></span>{{ cryptoCurrency.quotes.USD.price.toFixed(3)  }}
                     </td>
 
                     <td class="pricefont" v-bind:style="getColor(cryptoCurrency.quotes.USD.percent_change_24h)">
-                      <span v-if="cryptoCurrency.quotes.USD.percent_change_24h > 0">+</span>{{ cryptoCurrency.quotes.USD.percent_change_24h }}%
+                      <span v-if="cryptoCurrency.quotes.USD.percent_change_24h > 0">+</span>{{ (cryptoCurrency.quotes.USD.percent_change_24h).toFixed(2) }}%
                     </td>
-                    <td> {{cryptoCurrency.class}} </td>
+                    <!-- <td> {{cryptoCurrency.class}} </td> -->
 
+                    <td class="pricefont" v-bind:style="getColor(cryptoCurrency.quotes.USD.percent_change_24h)">
+                      {{ (100 * (cryptoCurrency.quotes.USD.market_cap)/totalClassCap).toFixed(2) }}%
+                    </td>
                   </tr>
 
                   <tr v-cloak></tr>
 
-                </tbody>
+      </tbody>
+
   </table>
 
 </template>
@@ -50,7 +65,9 @@ export default {
   data () {
     return {
       sharedState: store.state,
-      isOpenedInIFrame: false
+      isOpenedInIFrame: false,
+      myReturn: 0,
+      totalClassCap: 0
     }
   },
   created () {
@@ -65,35 +82,27 @@ export default {
       console.log(this.cl)
       var thisClass = []
       var j = 0
-      /* thisClass = this.cryptoCurrencies.filter(function (e) {
-        return e.class === this.cl
-      }) */
-      for (var i = 0; i < 100; i++) {
-        /* console.log(this.sharedState.cryptoCurrencies.data[i]) */
+
+      for (var i = 0; i < 3000; i++) {
         try {
           if (this.sharedState.cryptoCurrencies.data[i].class === this.cl) {
-            /* console.log('Class dismissed yo')
-            console.log(this.sharedState.cryptoCurrencies.data[i].class) */
             thisClass[j] = this.sharedState.cryptoCurrencies.data[i]
+
+            // eslint-disable-next-line
+            this.totalClassCap = this.totalClassCap + this.sharedState.cryptoCurrencies.data[i].quotes.USD.market_cap
+            // eslint-disable-next-line
+            this.myReturn = Math.round( 100 *
+              (this.myReturn + (this.sharedState.cryptoCurrencies.data[i].quotes.USD.percent_change_24h * (this.sharedState.cryptoCurrencies.data[i].quotes.USD.market_cap) / (this.totalClassCap)))
+            ) / 100
+
             j++
-            console.log(j)
           }
-        } catch (err) {
-          console.log('Rejected:')
-          console.log(i)
-        }
+        } catch (err) { }
       }
-      console.log('Class diss')
-      console.log(thisClass)
       return thisClass
       /* return this.sharedState.cryptoCurrencies.data */
     }
   },
-  /*,
-    secondThreeCryptoCurrencies () {
-      return this.sharedState.cryptoCurrencies.slice(3, 6)
-    }
-  }, */
 
   methods: {
     getDifferenceInChange (cryptoCurrency) {
@@ -131,7 +140,7 @@ table {
 
 td {
   font-size: 13px;
-  line-height: 40px;
+  line-height: 30px;
   vertical-align: top;
 }
 

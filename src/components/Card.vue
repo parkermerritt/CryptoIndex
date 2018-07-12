@@ -1,30 +1,21 @@
 <template>
-
     <vue-flip :active-click="true" width="30%" class="card">
-
 <!-- Card Front -->
-
       <div class="front" slot="front">
         <p class="card__name"><span>{{name1}}</span><br>{{name2}}</p>
         <cardtable v-bind:cl="cl"></cardtable>
       </div>
-
 <!-- Card Back -->
-
       <div slot="back" class="under">
           <p><span>Test Text</span></p>
       </div>
-
     </vue-flip>
-
 </template>
 
 <script>
 /* eslint-disable */
-
 import VueFlip from 'vue-flip'
 import CardTable from './CardTable'
-
 export default {
   name: 'card',
   components: {
@@ -37,7 +28,6 @@ export default {
     cl: String
   }
 }
-
 </script>
 
 <style scoped>
@@ -182,6 +172,23 @@ body {
 }
 .card:last-child {
   margin-right: 0;
+}
+
+
+@media (min-width: 701px ) and (max-width: 1000px) {
+  .card[style] {
+    width: 46% !important;
+    height: 325px !important;
+    display: flex;
+    flex: auto;
+    margin-left: 2%;
+    margin-right: 2%;
+
+}
+  .card .front,
+  .card .back {
+    height: 325px;
+  }
 }
 
 @media (max-width: 700px) {
