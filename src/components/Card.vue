@@ -54,7 +54,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 325px;
+  height: 360px;
   cursor: pointer;
 }
 
@@ -86,7 +86,7 @@ body {
   float: left;
   position: relative;
   width: calc(100% * .3333 - 30px + .3333 * 30px) !important;
-  height: 340px;
+  height: 360px;
   margin: 0 30px 30px 0;
   /* Prevents jerky motion when no longer hovering */
   transition: all 1s;
@@ -116,6 +116,8 @@ body {
   -webkit-transform: rotateY(-10deg);
   overflow: auto;
   background: #328c3b;
+  width: 98%;
+  margin-left: 4px;
 }
 
 .card:first-child .card__name {
@@ -186,33 +188,31 @@ body {
   margin-right: 0;
 }
 
-
 @media (min-width: 701px ) and (max-width: 1100px) {
   .card[style] {
     width: 46% !important;
-    height: 325px !important;
+    height: 365px !important;
     display: flex;
     flex: auto;
     margin-left: 2%;
     margin-right: 2%;
-
 }
   .card .front,
   .card .back {
-    height: 325px;
+    height: 365px;
   }
 }
 
 @media (max-width: 700px) {
   .card[style] {
     width: 100% !important;
-    height: 325px !important;
+    height: 365px !important;
     margin-right: 0;
     float: none;
   }
   .card .front,
   .card .back {
-    height: 325px;
+    height: 365px;
   }
 }
 

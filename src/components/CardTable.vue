@@ -26,7 +26,7 @@
                   <tr v-cloak v-for="(cryptoCurrency,index) in firstThreeCryptoCurrencies" :key="index" :cryptoCurrency-class.sync="cl" >
                     <td :key="cryptoCurrency.id">
 
-                      <!--<coin :class="{ getCoinColor }"></coin>-->
+                      <coin></coin>
                       {{  cryptoCurrency.symbol  }}
 
                     </td>
@@ -71,7 +71,12 @@ export default {
   },
   props: {
     cl: String,
-    tc: String
+    tc: String,
+    col: {
+      type: Object,
+      required: true,
+      color: 'orange'
+    }
   },
   data () {
     return {
@@ -199,7 +204,7 @@ thead tr:nth-child(1) td {
 }
 thead tr:nth-child(2) td {
   font-size: 14px;
-  line-height: 28px;
+  line-height: 22px;
   border: solid;
   border-width: 2px 0;
   border-top: none;
@@ -208,11 +213,28 @@ thead tr:nth-child(2) td {
 tbody tr td:nth-child(1) {
   font-size: 14px;
   font-weight: 5000;
-  line-height: 34px;
 }
 
 tbody tr td:nth-child(2) {
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: 5000;
+  padding-top: 20px;
+}
+
+tbody tr td:nth-child(3) {
+  font-size: 18px;
+  font-weight: 5000;
+  padding-top: 20px;
+}
+
+tbody tr td:nth-child(4) {
+  font-size: 18px;
+  font-weight: 5000;
+  padding-top: 20px;
+}
+
+tbody tr td {
+  font-size: 20px;
   font-weight: 5000;
   line-height: 28px;
 }

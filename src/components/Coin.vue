@@ -1,6 +1,6 @@
 <template>
   <!-- cointest -->
-                  <div class="skill-icon color">
+                  <div class="skill-icon" >
                         <div class="icon"></div>
                         <div class="coin front">
                         </div>
@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import '../assets/style.css'
+
 export default {
   name: 'coin',
   props: {
@@ -30,7 +32,6 @@ export default {
   },
   data () {
     return {
-      col: 'none'
     }
   }
 }
@@ -44,7 +45,8 @@ export default {
   height: 45px;
   margin: 0px;
   margin-bottom: -5px;
-  margin-left: 21%;
+  margin-top: 6px;
+  margin-left: 18%;
   -webkit-transform: perspective(400);
           transform: perspective(400);
   -webkit-transform-style: preserve-3d;
@@ -149,6 +151,10 @@ td:hover .skill-icon {
 }
 .color:empty {
   box-shadow: inset 0 0 0 85px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon[col=orange] {
+    color: orange;
 }
 
 </style>
