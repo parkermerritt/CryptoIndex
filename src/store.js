@@ -39,6 +39,8 @@ export const store = {
     /* console.log(cryptoCurrency) */
     cryptoCurrency.id = cryptoCurrency.id in cryptoCurrencyData ? cryptoCurrency.id : undefined
     cryptoCurrency.class = cryptoCurrencyData[cryptoCurrency.id].class
+    cryptoCurrency.color = cryptoCurrencyData[cryptoCurrency.id].color
+
     /* console.log('Yolo')
     console.log(cryptoCurrencyData[cryptoCurrency.id].class) */
     /* cryptoCurrency.positivePercentChange = !(cryptoCurrency.percent_change_24h.indexOf('-') > -1)

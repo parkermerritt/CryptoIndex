@@ -1,6 +1,6 @@
 <template>
   <!-- cointest -->
-                  <div class="skill-icon" >
+                  <div v-bind:style="{color:col}" class="skill-icon" >
                         <div class="icon"></div>
                         <div class="coin front">
                         </div>
@@ -15,8 +15,7 @@
                         <div class="coin back">
                           <div class="icon"></div>
                         </div>
-
-                        <div class="coin-wedge"></div>
+                      <div class="coin-wedge"></div>
                     </div>
                     <!-- -->
 </template>
@@ -28,7 +27,8 @@ export default {
   name: 'coin',
   props: {
     pos: String,
-    size: String
+    size: String,
+    col: String
   },
   data () {
     return {
@@ -153,8 +153,8 @@ td:hover .skill-icon {
   box-shadow: inset 0 0 0 85px rgba(0, 0, 0, 0.2);
 }
 
-.skill-icon[col=orange] {
+/* .skill-icon {
     color: orange;
-}
+} */
 
 </style>

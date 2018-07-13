@@ -26,7 +26,7 @@
                   <tr v-cloak v-for="(cryptoCurrency,index) in firstThreeCryptoCurrencies" :key="index" :cryptoCurrency-class.sync="cl" >
                     <td :key="cryptoCurrency.id">
 
-                      <coin></coin>
+                      <coin :col="cryptoCurrency.color"></coin>
                       {{  cryptoCurrency.symbol  }}
 
                     </td>
@@ -74,8 +74,7 @@ export default {
     tc: String,
     col: {
       type: Object,
-      required: true,
-      color: 'orange'
+      required: true
     }
   },
   data () {
