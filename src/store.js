@@ -40,6 +40,10 @@ export const store = {
     cryptoCurrency.id = cryptoCurrency.id in cryptoCurrencyData ? cryptoCurrency.id : undefined
     cryptoCurrency.class = cryptoCurrencyData[cryptoCurrency.id].class
     cryptoCurrency.color = cryptoCurrencyData[cryptoCurrency.id].color
+    cryptoCurrency.dimx = cryptoCurrencyData[cryptoCurrency.id].dimx
+    cryptoCurrency.dimy = cryptoCurrencyData[cryptoCurrency.id].dimy
+    cryptoCurrency.pos = cryptoCurrencyData[cryptoCurrency.id].pos
+    cryptoCurrency.size = cryptoCurrencyData[cryptoCurrency.id].size
 
     /* console.log('Yolo')
     console.log(cryptoCurrencyData[cryptoCurrency.id].class) */

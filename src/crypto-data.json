@@ -5,22 +5,27 @@
      "class": "currency",
      "class-share": 0,
      "color": "#FF9900",
-     "picpos": "144px 4px",
-     "picsize": "350px 350px"
+     "dimx": 144,
+     "dimy": 4,
+     "pos": "144px 4px",
+     "size": "350px 350px"
    },
    "2": {
      "coin": "litecoin",
      "id": 2,
      "class": "currency",
      "class-share": 0,
-     "color": "silver"
+     "color": "silver",
+     "dimx": 150
+          
    },
    "52": {
      "coin": "ripple",
      "id": 52,
      "class": "currency",
      "class-share": 0,
-     "color": "blue"
+     "color": "blue",
+      "dimx": 150
 
    },
    "131": {
@@ -28,14 +33,16 @@
      "id": 131,
      "class": "privacy",
      "class-share": 0,
-     "color": "blue"
+     "color": "blue",
+      "dimx": 150
    },
    "291": {
      "coin": "maidsafecoin",
      "id": 291,
      "class": "resource",
      "class-share": 0,
-     "color": "white"
+     "color": "white",
+      "dimx": 150
 
    },
    "693": {
@@ -43,7 +50,8 @@
      "id": 693,
      "class": "privacy",
      "class-share": 0,
-     "color": "cyan"
+     "color": "cyan",
+      "dimx": 150
 
    },
    "1027": {
@@ -51,7 +59,8 @@
      "id": 1027,
      "class": "gas",
      "class-share": 0,
-     "color": "silver"
+     "color": "silver",
+     "dimx": 150
 
    },
    "1104": {
@@ -59,7 +68,8 @@
      "id": 1104,
      "class": "utility",
      "class-share": 0,
-     "color": "purple"
+     "color": "purple",
+      "dimx": 150
 
    },
    "1169": {
@@ -67,7 +77,8 @@
      "id": 1169,
      "class": "privacy",
      "class-share": 0,
-     "color": "purple"
+     "color": "purple",
+     "dimx": 150
 
    },
    "1321": {
@@ -134,6 +145,15 @@
      "color": "white",
      "picpos": "282px 4px;",
      "picsize": "400px 400px"
+   },
+   "1896": {
+     "coin": "0x",
+     "id": 1896,
+     "class": "exchange",
+     "class-share": 0,
+     "color": "silver",
+     "picpos": "",
+     "picsize": ""
    },
    "1934": {
      "coin": "loopring",
@@ -322,11 +342,13 @@
      "id": 1455,
      "class": "resource",
      "class-share": 0,
-     "color": "white"
+     "color": "white",
+     "pos": "203px 2px",
+     "size": "400px 400px"
 
    },
    "512": {
-     "coin" :"stellar",
+     "coin" : "stellar",
      "id": 512,
      "class": "currency",
      "class-share": 0,

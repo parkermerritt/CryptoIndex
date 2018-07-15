@@ -26,7 +26,7 @@
                   <tr v-cloak v-for="(cryptoCurrency,index) in firstThreeCryptoCurrencies" :key="index" :cryptoCurrency-class.sync="cl" >
                     <td :key="cryptoCurrency.id">
 
-                      <coin :col="cryptoCurrency.color"></coin>
+                     <coin :dimx="cryptoCurrency.dimx" :dimy="cryptoCurrency.dimy" :col="cryptoCurrency.color" :pos="cryptoCurrency.pos" :size="cryptoCurrency.size"></coin>
                       {{  cryptoCurrency.symbol  }}
 
                     </td>
@@ -75,6 +75,22 @@ export default {
     col: {
       type: Object,
       required: true
+    },
+    dimx: {
+      type: Number,
+      required: true
+    },
+    dimy: {
+      type: Number,
+      required: true
+    },
+    size: {
+      type: Number,
+      required: true
+    },
+    pos: {
+      type: String,
+      required: true
     }
   },
   data () {
@@ -119,12 +135,6 @@ export default {
       return thisClass
       /* return this.sharedState.cryptoCurrencies.data */
     }
-    /* getCoinColor: (cryptoCurrency) => {
-      console.log('color')
-      console.log(cryptoCurrency.color)
-
-      return cryptoCurrency.color
-    } */
   },
 
   methods: {
@@ -141,24 +151,32 @@ export default {
     },
     getColor: (num) => {
       return (num > 0.00 ? 'color:#42f456;' : 'color:#ff7a7a;')
-    },
-    getCoinColor: (cryptoCurrency) => {
-      console.log('color')
-      console.log(cryptoCurrency.color)
-      return cryptoCurrency.color
     }
   },
   directives: {
     col: {
       bind: function (el, binding) {
-        var s = JSON.stringify
-        el.color = s(binding.color)
+        var c = JSON.stringify
+        el.color = c(binding.color)
         console.log(el.col)
+      }
+    },
+    pos: {
+      bind: function (el, binding) {
+        var p = JSON.stringify
+        el.backgroundPostion = p(binding.backgroundPostion)
+        console.log(el.backgroundPostion)
+      }
+    },
+    size: {
+      bind: function (el, binding) {
+        var s = JSON.stringify
+        el.backgroundPostion = s(binding.backgroundSize)
+        console.log(el.backgroundSize)
       }
     }
   }
 }
-
 </script>
 
 <style>

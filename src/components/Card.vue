@@ -7,7 +7,7 @@
       </div>
 <!-- Card Back -->
       <div slot="back" class="under">
-          <!-- <pie></pie> -->
+          <pie></pie>
       </div>
     </vue-flip>
 </template>
@@ -16,14 +16,14 @@
 /* eslint-disable */
 import VueFlip from 'vue-flip'
 import CardTable from './CardTable'
-/* import Pie from './Pie' */
+import Pie from './Pie'
 
 export default {
   name: 'card',
   components: {
     'vue-flip': VueFlip,
     'cardtable': CardTable,
-    /* 'pie' : Pie */
+    'pie' : Pie
   },
   props: {
     name1: String,
@@ -35,6 +35,15 @@ export default {
 </script>
 
 <style scoped>
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
 
 body {
   min-height: 100vh;

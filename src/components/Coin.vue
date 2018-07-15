@@ -1,8 +1,8 @@
 <template>
   <!-- cointest -->
                   <div v-bind:style="{color:col}" class="skill-icon" >
-                        <div class="icon"></div>
-                        <div class="coin front">
+                        <div class="icon" v-bind:src="require('../assets/CoinSkillIcons.png')" v-bind:style="{ 'backgroundPosition': pos, 'backgroundSize': size}"></div>
+                        <div v-bind:style="{color:col}" class="coin front">
                         </div>
                         <div class="coin"></div>
                         <div class="coin"></div>
@@ -22,17 +22,23 @@
 
 <script>
 import '../assets/style.css'
+import '../assets/CoinSkillIcons.png'
 
 export default {
   name: 'coin',
   props: {
     pos: String,
     size: String,
-    col: String
+    col: String,
+    dimx: Number,
+    dimy: Number
   },
   data () {
     return {
     }
+  },
+  computed: {
+
   }
 }
 </script>
