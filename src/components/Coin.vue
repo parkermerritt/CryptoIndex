@@ -1,7 +1,7 @@
 <template>
   <!-- cointest -->
                   <div v-bind:style="{color:col}" class="skill-icon" >
-                        <div class="icon" v-bind:src="require('../assets/CoinSkillIcons.png')" v-bind:style="{ 'backgroundPosition': pos, 'backgroundSize': size}"></div>
+                        <div class="icon" v-bind:src="require('../assets/CoinSkillIcons4.png')" v-bind:style="{ 'backgroundPosition': pos, 'backgroundSize': size}"></div>
                         <div v-bind:style="{color:col}" class="coin front">
                         </div>
                         <div class="coin"></div>
@@ -22,7 +22,7 @@
 
 <script>
 import '../assets/style.css'
-import '../assets/CoinSkillIcons.png'
+/* import '../assets/CoinSkillIcons4.png' */
 
 export default {
   name: 'coin',
@@ -136,7 +136,8 @@ td:hover .skill-icon {
 .icon {
   width: 40px;
   height: 40px;
-  background: url("../assets/CoinSkillIcons.png");
+  /* Coin import here */
+  background: url("../assets/CoinSkillIcons5.png");
   background-size: 340px 340px;
   background-position: inherit;
   margin: 0 0 0 0;
@@ -153,7 +154,7 @@ td:hover .skill-icon {
 
 .color {
   transition-delay: 0.075s;
-  background-image: url("../assets/CoinSkillIcons.png");
+  background-image: url("../assets/CoinSkillIcons4.png");
 }
 .color:empty {
   box-shadow: inset 0 0 0 85px rgba(0, 0, 0, 0.2);
