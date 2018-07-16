@@ -7,7 +7,7 @@
       </div>
 <!-- Card Back -->
       <div slot="back" class="under">
-          <pie></pie>
+          <pie v-bind:cl="cl"></pie>
       </div>
     </vue-flip>
 </template>

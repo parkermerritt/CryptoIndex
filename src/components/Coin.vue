@@ -22,7 +22,6 @@
 
 <script>
 import '../assets/style.css'
-/* import '../assets/CoinSkillIcons4.png' */
 
 export default {
   name: 'coin',
@@ -137,7 +136,7 @@ td:hover .skill-icon {
   width: 40px;
   height: 40px;
   /* Coin import here */
-  background: url("../assets/CoinSkillIcons5.png");
+  background: url("../assets/CoinSkillIcons5BW.png");
   background-size: 340px 340px;
   background-position: inherit;
   margin: 0 0 0 0;

@@ -37,6 +37,9 @@
 <script>
 export default {
   name: 'Pie',
+  props: {
+    cl: String
+  },
   methods: {
     /* Pie Charts */
 
