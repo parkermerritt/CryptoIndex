@@ -18,13 +18,11 @@
 <script>
 import FixedHeader from 'vue-fixed-header'
 import Card from './components/Card'
-import Header from './components/Header'
 
 export default {
   name: 'App',
   components: {
     Card,
-    Header,
     FixedHeader
   },
   data () {

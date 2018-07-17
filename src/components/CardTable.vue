@@ -6,7 +6,7 @@
       <tr>
         <!-- <td class="classAvgs">TOTAL:</td> -->
         <td colspan="2">TOTAL CAP &nbsp;<span v-bind:style="getColor(this.myReturn)">${{(Math.round( this.totalClassCap) / 1000000000).toFixed(2)}} B</span></td>
-        <td colspan="1">24H &nbsp;<span v-bind:style="getColor(this.myReturn)">{{myReturn}}%</span></td>
+        <td colspan="1">24H &nbsp;<span v-bind:style="getColor(this.myReturn)">{{(this.myReturn).toFixed(2)}}%</span></td>
         <td colspan="1"> {{ this.quant }} assets </td>
 
       </tr>
@@ -78,21 +78,12 @@ export default {
       type: Object,
       required: true
     },
-    dimx: {
-      type: Number,
-      required: true
-    },
-    dimy: {
-      type: Number,
-      required: true
-    },
     size: {
       type: Number,
       required: true
     },
     pos: {
-      type: String,
-      required: true
+      type: String
     }
   },
   data () {
@@ -117,16 +108,17 @@ export default {
       var thisClass = []
       var j = 0
 
-      for (var i = 0; i < 3000; i++) {
+      for (let i = 0; i < 3000; i++) {
         try {
           if (this.sharedState.cryptoCurrencies.data[i].class === this.cl) {
             thisClass[j] = this.sharedState.cryptoCurrencies.data[i]
             // eslint-disable-next-line
-            this.totalClassCap = this.totalClassCap + this.sharedState.cryptoCurrencies.data[i].quotes.USD.market_cap
+            // this.totalClassCap = this.totalClassCap + this.sharedState.cryptoCurrencies.data[i].quotes.USD.market_cap
+
             // eslint-disable-next-line
-            this.myReturn = Math.round( 100 *
-              (this.myReturn + (this.sharedState.cryptoCurrencies.data[i].quotes.USD.percent_change_24h * (this.sharedState.cryptoCurrencies.data[i].quotes.USD.market_cap) / (this.totalClassCap)))
-            ) / 100
+            // this.myReturn = Math.round( 100 *
+            //   (this.myReturn + (this.sharedState.cryptoCurrencies.data[i].quotes.USD.percent_change_24h * (this.sharedState.cryptoCurrencies.data[i].quotes.USD.market_cap) / (this.totalClassCap)))
+            // ) / 100
 
             j++
             // eslint-disable-next-line
@@ -134,6 +126,24 @@ export default {
           }
         } catch (err) { }
       }
+      for (let k = 0; k < j; k++) {
+        // eslint-disable-next-line
+        this.totalClassCap = this.totalClassCap + thisClass[k].quotes.USD.market_cap
+        console.log(this.cl)
+        console.log(k)
+      }
+
+      for (let l = 0; l < j; l++) {
+        console.log(thisClass[l].quotes.USD.percent_change_24h)
+        console.log(this.totalClassCap)
+        console.log((thisClass[l].quotes.USD.percent_change_24h * ((thisClass[l].quotes.USD.market_cap) / this.totalClassCap)))
+        // eslint-disable-next-line
+        this.myReturn =
+          (this.myReturn + (thisClass[l].quotes.USD.percent_change_24h * ((thisClass[l].quotes.USD.market_cap) / this.totalClassCap))
+          )
+        console.log(this.myReturn)
+      }
+
       return thisClass
       /* return this.sharedState.cryptoCurrencies.data */
     }
