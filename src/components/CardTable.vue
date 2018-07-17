@@ -42,6 +42,8 @@
 
                     <td class="pricefont" v-bind:style="getColor(cryptoCurrency.quotes.USD.percent_change_24h)">
                       {{ (100 * (cryptoCurrency.quotes.USD.market_cap)/totalClassCap).toFixed(2) }}%
+                      <!--{{ cryptoCurrency.share }}%-->
+
                     </td>
                   </tr>
 
@@ -135,6 +137,16 @@ export default {
       return thisClass
       /* return this.sharedState.cryptoCurrencies.data */
     }
+    /* getMarketShare () {
+      for (var k = 0; k < 10; k++) {
+        try {
+          thisClass[k].class-share = thisClass[k].market_cap
+
+        } catch (err) { }
+      }
+      var share = 0
+      return share
+    } */
   },
 
   methods: {

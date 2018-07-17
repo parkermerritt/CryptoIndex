@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-
+    <fixed-header>
+      <div :class="{ 'is-fixed': isFixed }">
+      <h1>Finndex Cryptoasset Tracker</h1>
+      <h4><a href="#">Finndex Top 50</a> - <a href="#">ETF Builder</a> - <a href="#">Trending Indices</a></h4>
+    </div></fixed-header>
     <!--<img src="./assets/logo.png">-->
     <card tc="green" cl="currency" name1="Crypto" name2="Currencies"></card>
     <card tc="blue" cl="gas" name1="Platform" name2="Gas"></card>
@@ -12,6 +16,7 @@
 </template>
 
 <script>
+import FixedHeader from 'vue-fixed-header'
 import Card from './components/Card'
 import Header from './components/Header'
 
@@ -19,7 +24,13 @@ export default {
   name: 'App',
   components: {
     Card,
-    Header
+    Header,
+    FixedHeader
+  },
+  data () {
+    return {
+      isFixed: false
+    }
   }
 }
 </script>
@@ -36,6 +47,21 @@ export default {
 
 body {
   background: #1f1f1f;
+}
+
+h1 {
+  color: white;
+}
+
+a {
+    text-decoration: none;
+      color: white;
+
+}
+
+h4 {
+  text-decoration: none;
+  color: white;
 }
 
 </style>

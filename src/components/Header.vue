@@ -8,3 +8,10 @@ export default {
 }
 
 </script>
+<style>
+h1 {
+  color:white;
+  z-index: 100;
+  margin: 0;
+}
+</style>
