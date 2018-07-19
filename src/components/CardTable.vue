@@ -58,6 +58,7 @@
 <script>
 import { store } from '../store.js'
 import Coin from './Coin'
+import _ from 'lodash'
 
 var state = store.state
 var cryptoCurrencies = state.cryptoCurrencies.data
@@ -81,7 +82,13 @@ export default {
       isOpenedInIFrame: false,
       myReturn: 0,
       totalClassCap: 0,
-      quant: 0
+      quant: 0,
+      sortKey: '',
+      sortSettings: [
+        { 'market_cap': true },
+        { 'percent_change_24h': true }
+      ],
+      desc: true
     }
   },
   created () {
@@ -103,7 +110,8 @@ export default {
             thisClass[j] = this.sharedState.cryptoCurrencies.data[i]
             // eslint-disable-next-line
             // this.totalClassCap = this.totalClassCap + this.sharedState.cryptoCurrencies.data[i].quotes.USD.market_cap
-
+            thisClass[j].market_cap = this.sharedState.cryptoCurrencies.data[i].quotes.USD.market_cap
+            console.log(thisClass[j].market_cap)
             // eslint-disable-next-line
             // this.myReturn = Math.round( 100 *
             //   (this.myReturn + (this.sharedState.cryptoCurrencies.data[i].quotes.USD.percent_change_24h * (this.sharedState.cryptoCurrencies.data[i].quotes.USD.market_cap) / (this.totalClassCap)))
@@ -133,7 +141,7 @@ export default {
         /* console.log(this.myReturn) */
       }
 
-      return thisClass
+      return _.orderBy(thisClass, ['market_cap'], ['desc'])
       /* return this.sharedState.cryptoCurrencies.data */
     }
     /* getMarketShare () {
