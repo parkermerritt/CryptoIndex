@@ -231,7 +231,7 @@ body {
   margin-right: 0;
 }
 
-@media (min-width: 701px ) and (max-width: 1100px) {
+@media (min-width: 750px ) and (max-width: 1100px) {
   .card[style] {
     width: 46% !important;
     height: 365px !important;
@@ -246,7 +246,7 @@ body {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 749px) {
   .card[style] {
     width: 100% !important;
     height: 365px !important;
