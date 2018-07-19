@@ -134,7 +134,7 @@ td:hover .skill-icon {
   width: 40px;
   height: 40px;
   /* Coin import here */
-  background: url("../assets/CoinSkillIcons5BW.png");
+  background: url("../assets/CoinSkillIcons7BW.png");
   margin: 0 0 0 0;
 }
 
