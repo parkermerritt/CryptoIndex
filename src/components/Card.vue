@@ -15,7 +15,8 @@
 
 <script>
 /* eslint-disable */
-import VueFlip from 'vue-flip'
+/* import VueFlip from 'vue-flip' */
+import VueFlip from './VueFlip'
 import CardTable from './CardTable'
 import Pie from './Pie'
 
@@ -58,6 +59,7 @@ body {
   src: url('https://fonts.googleapis.com/css?family=Lato');
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  
 }
 
 .front, .under {
@@ -67,6 +69,7 @@ body {
   width: 100%;
   height: 360px;
   cursor: pointer;
+  
 }
 
 .card:hover {
@@ -76,6 +79,7 @@ body {
   -webkit-transform: rotateY(-15deg);
   transition: all 0.8s;
   -webkit-transition: all 0.8s;
+  
 }
 
 .card .front {
@@ -91,6 +95,7 @@ body {
     justify-content: center;
     background-color: #141414 !important;
     color: white !important;
+    
   }
 
 .card {
@@ -103,6 +108,7 @@ body {
   transition: all 0.8s;
   -webkit-transition: all 0.8s;
   -webkit-tap-highlight-color: transparent;
+
 }
 
 .card__name {
@@ -124,7 +130,7 @@ body {
 
 .card:nth-child(2) .front {
   -webkit-transform-style: preserve-3d;
- transform-style: preserve-3d;
+  transform-style: preserve-3d;
   transform: rotateY(-15deg);
   -webkit-transform: rotateY(-15deg);
   overflow: auto;
