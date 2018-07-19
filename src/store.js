@@ -24,15 +24,15 @@ export const store = {
         this.state.cryptoCurrencies.length = 100
         var parent = this.state.cryptoCurrencies.data
         var arr = Object.keys(parent).map(function (k) { return parent[k] })
-        console.log(arr)
-        console.log('Adios')
+        /* console.log(arr)
+        console.log('Adios') */
         arr.forEach(data => this.addImageAndDescription(data))
 
         /* this.state.cryptoCurrencies.forEach(cryptoCurrency => this.addImageAndDescription(cryptoCurrency)) */
         /* Array.prototype.forEach.call(parent.data, data => this.addImageAndDescription(parent.data)) */
 
-        console.log(parent.data)
-        console.log('Holaa')
+        /* console.log(parent.data)
+        console.log('Holaa') */
       })
   },
   addImageAndDescription (cryptoCurrency) {
@@ -40,8 +40,6 @@ export const store = {
     cryptoCurrency.id = cryptoCurrency.id in cryptoCurrencyData ? cryptoCurrency.id : undefined
     cryptoCurrency.class = cryptoCurrencyData[cryptoCurrency.id].class
     cryptoCurrency.color = cryptoCurrencyData[cryptoCurrency.id].color
-    cryptoCurrency.dimx = cryptoCurrencyData[cryptoCurrency.id].dimx
-    cryptoCurrency.dimy = cryptoCurrencyData[cryptoCurrency.id].dimy
     cryptoCurrency.pos = cryptoCurrencyData[cryptoCurrency.id].pos
     cryptoCurrency.size = cryptoCurrencyData[cryptoCurrency.id].size
 
@@ -59,5 +57,5 @@ export const store = {
   }
 
 }
-console.log(this.response)
-console.log(this.getUrl)
+/* console.log(this.response)
+console.log(this.getUrl) */

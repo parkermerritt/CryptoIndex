@@ -1,4 +1,5 @@
 <template>
+
     <vue-flip :active-click="true" width="30%" class="card">
 <!-- Card Front -->
       <div class="front" slot="front">
@@ -54,6 +55,7 @@ body {
   background: #1f1f1f;
   color: white;
   font-family: 'Lato';
+  src: url('https://fonts.googleapis.com/css?family=Lato');
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }

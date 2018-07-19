@@ -62,8 +62,8 @@ import Coin from './Coin'
 var state = store.state
 var cryptoCurrencies = state.cryptoCurrencies.data
 
-console.log({store})
-console.log({state})
+/* console.log({store})
+console.log({state}) */
 console.log({cryptoCurrencies})
 
 export default {
@@ -118,19 +118,19 @@ export default {
       for (let k = 0; k < j; k++) {
         // eslint-disable-next-line
         this.totalClassCap = this.totalClassCap + thisClass[k].quotes.USD.market_cap
-        console.log(this.cl)
-        console.log(k)
+        /* console.log(this.cl)
+        console.log(k) */
       }
 
       for (let l = 0; l < j; l++) {
-        console.log(thisClass[l].quotes.USD.percent_change_24h)
+        /* console.log(thisClass[l].quotes.USD.percent_change_24h)
         console.log(this.totalClassCap)
-        console.log((thisClass[l].quotes.USD.percent_change_24h * ((thisClass[l].quotes.USD.market_cap) / this.totalClassCap)))
+        console.log((thisClass[l].quotes.USD.percent_change_24h * ((thisClass[l].quotes.USD.market_cap) / this.totalClassCap))) */
         // eslint-disable-next-line
         this.myReturn =
           (this.myReturn + (thisClass[l].quotes.USD.percent_change_24h * ((thisClass[l].quotes.USD.market_cap) / this.totalClassCap))
           )
-        console.log(this.myReturn)
+        /* console.log(this.myReturn) */
       }
 
       return thisClass
