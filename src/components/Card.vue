@@ -100,6 +100,7 @@ body {
   /* Prevents jerky motion when no longer hovering */
   transition: all 0.8s;
   -webkit-transition: all 0.8s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .card__name {
@@ -129,6 +130,8 @@ body {
   width: 100%;
   border-right: 2px solid rgba(30, 84, 35);
   transition: border-width 0.25s linear;
+  -webkit-tap-highlight-color: transparent;
+
 }
 .card:nth-child(2):hover .front {
   border-width: 5px;

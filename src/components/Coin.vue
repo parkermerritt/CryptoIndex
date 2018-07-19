@@ -1,7 +1,7 @@
 <template>
   <!-- cointest -->
                   <div v-bind:style="{color:col}" class="skill-icon" >
-                        <div class="icon" v-bind:src="require('../assets/CoinSkillIcons4.png')" v-bind:style="{ 'backgroundPosition': pos, 'backgroundSize': size}"></div>
+                        <div class="icon" v-bind:style="{ 'backgroundPosition': pos, 'backgroundSize': size}"></div>
                         <div v-bind:style="{color:col}" class="coin front">
                         </div>
                         <div class="coin"></div>
@@ -28,9 +28,7 @@ export default {
   props: {
     pos: String,
     size: String,
-    col: String,
-    dimx: Number,
-    dimy: Number
+    col: String
   },
   data () {
     return {
@@ -137,8 +135,6 @@ td:hover .skill-icon {
   height: 40px;
   /* Coin import here */
   background: url("../assets/CoinSkillIcons5BW.png");
-  background-size: 340px 340px;
-  background-position: inherit;
   margin: 0 0 0 0;
 }
 
@@ -153,14 +149,9 @@ td:hover .skill-icon {
 
 .color {
   transition-delay: 0.075s;
-  background-image: url("../assets/CoinSkillIcons4.png");
 }
 .color:empty {
   box-shadow: inset 0 0 0 85px rgba(0, 0, 0, 0.2);
 }
-
-/* .skill-icon {
-    color: orange;
-} */
 
 </style>
