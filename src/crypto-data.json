@@ -5,8 +5,8 @@
      "class": "currency",
      "class-share": 0,
      "color": "orange",
-     "pos": "1px 2px",
-     "size": "350px 350px"
+     "pos": "0px 0px",
+     "size": "365px 365px"
    },
    "2": {
      "coin": "litecoin",
@@ -14,7 +14,7 @@
      "class": "currency",
      "class-share": 0,
      "color": "silver",
-     "pos": "-35px 2px",
+     "pos": "-35px 0px",
      "size": "360px 360px"
           
    },
@@ -24,8 +24,8 @@
      "class": "currency",
      "class-share": 0,
      "color": "blue",
-     "pos": "-71px 2px",
-     "size": "360px 360px"
+     "pos": "-74px 0px",
+     "size": "370px 370px"
 
    },
    "131": {
@@ -154,8 +154,8 @@
      "class": "currency",
      "class-share": 0,
      "color": "SpringGreen",
-     "pos": "-182px 1px",
-     "size": "360px 360px"
+     "pos": "-188px 0px",
+     "size": "370px 370px"
 
    },
    "1839": {
@@ -253,8 +253,8 @@
      "class": "currency",
      "class-share": 0,
      "color": "white",
-     "pos": "-142px 2px",
-     "size": "360px 360px"
+     "pos": "-145px 0px",
+     "size": "367px 367px"
 
    },
    "328": {
