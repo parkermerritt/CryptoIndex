@@ -2,8 +2,9 @@
   <div id="app">
     <fixed-header>
       <div :class="{ 'is-fixed': isFixed }">
-      <h1>Finndex Cryptoasset Tracker</h1>
-      <h4><a href="#">Finndex Top 50</a> - <a href="#">ETF Builder</a> - <a href="#">Trending Indices</a></h4>
+      <h1>FINNDEX</h1>
+      <h4>Cryptoasset Tracker</h4>
+      <!--<h4><a href="#">Finndex Top 50</a> - <a href="#">ETF Builder</a> - <a href="#">Trending Indices</a></h4>-->
     </div></fixed-header>
     <!--<img src="./assets/logo.png">-->
     <card tc="green" cl="currency" name1="Crypto" name2="Currencies"></card>
@@ -49,6 +50,8 @@ body {
 
 h1 {
   color: white;
+  font-size: 60px;
+  margin: 0;
 }
 
 a {
@@ -60,6 +63,8 @@ a {
 h4 {
   text-decoration: none;
   color: white;
+  margin-bottom: 20px;
+  margin-top: -20px;
 }
 
 </style>
