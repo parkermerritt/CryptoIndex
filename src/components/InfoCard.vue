@@ -9,24 +9,25 @@
 </template>
 
 <script>
-import InfoCard from 'vue-info-card'
+import InfoCard from "vue-info-card";
 
 export default {
-  name: 'infocard',
+  name: "infocard",
   components: {
     InfoCard
   },
-  data: function () {
+  data: function() {
     return {
       front: {
-        title: 'Daily Conversion Value',
+        title: "Daily Conversion Value",
         graphData: [3, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0]
       },
       back: {
-        title: 'Monthly Summary',
-        message: 'Your average daily conversion value for this month is <b>50.4$</b>. It is below the average of the last six months.'
+        title: "Monthly Summary",
+        message:
+          "Your average daily conversion value for this month is <b>50.4$</b>. It is below the average of the last six months."
       }
-    }
+    };
   }
-}
+};
 </script>

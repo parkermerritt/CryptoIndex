@@ -1,3 +1,4 @@
+
 <template>
   <div id="app">
     <fixed-header>
@@ -13,30 +14,32 @@
     <card tc="peach" cl="resource" name1="Computational" name2="Resources"></card>
     <card tc="gray" cl="privacy" name1="Privacy" name2="Coins"></card>
     <card tc="mustard" cl="utility" name1="Utility" name2="Tokens"></card>
+  <h5>© 2019 Parker Merritt</h5>
   </div>
 </template>
 
 <script>
-import FixedHeader from 'vue-fixed-header'
-import Card from './components/Card'
+/* eslint-disable */
+import FixedHeader from "vue-fixed-header";
+import Card from "./components/Card";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Card,
     FixedHeader
   },
-  data () {
+  data() {
     return {
       isFixed: false
-    }
+    };
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -55,9 +58,8 @@ h1 {
 }
 
 a {
-    text-decoration: none;
-      color: white;
-
+  text-decoration: none;
+  color: white;
 }
 
 h4 {
@@ -66,5 +68,4 @@ h4 {
   margin-bottom: 20px;
   margin-top: -15px;
 }
-
 </style>
