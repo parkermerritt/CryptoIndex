@@ -5,6 +5,7 @@
   "author": "pmerritt",
   "homepage": "https://github.com/parkermerritt/CryptoIndex",
   "private": true,
+  "wst": "/dist/",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -21,6 +22,7 @@
     "vue": "^2.5.2",
     "vue-axios": "^2.1.2",
     "vue-fixed-header": "^1.0.1",
+    "vue-gh-pages": "^1.19.0",
     "vue-info-card": "^0.1.1"
   },
   "devDependencies": {
@@ -87,7 +89,7 @@
     "vuex": "^3.0.1",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-dev-server": "^2.9.1",
+    "webpack-dev-server": ">=3.1.11",
     "webpack-merge": "^4.1.0"
   },
   "engines": {

@@ -35,18 +35,19 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
-  name: 'Pie',
+  name: "Pie",
   props: {
     cl: String
   },
   methods: {
     /* Pie Charts */
 
-    sliceSize (dataNum, dataTotal) {
-      return (dataNum / dataTotal) * 360
+    sliceSize(dataNum, dataTotal) {
+      return dataNum / dataTotal * 360;
     }
-  /* addSlice (sliceSize, pieElement, offset, sliceID, color) {
+    /* addSlice (sliceSize, pieElement, offset, sliceID, color) {
   $(pieElement).append('<div class='slice' + 'sliceID' + '><span></span></div>")
   var offset = offset - 1
   var sizeRotation = -179 + sliceSize;
@@ -101,8 +102,7 @@ export default {
     }
   */
   }
-
-}
+};
 </script>
 
 <style>
@@ -137,7 +137,7 @@ section {
   z-index: 1;
   width: 100px;
   height: 100px;
-  background: #EEE;
+  background: #eee;
   border-radius: 50%;
   top: 50px;
   left: 50px;
@@ -180,8 +180,8 @@ section {
   margin-left: -100px;
   margin-top: -40px;
   margin-right: 50px;
-  background: #FFF;
-  color:#000;
+  background: #fff;
+  color: #000;
   padding: 15px;
   font-size: 13px;
 }

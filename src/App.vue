@@ -14,7 +14,7 @@
     <card tc="peach" cl="resource" name1="Computational" name2="Resources"></card>
     <card tc="gray" cl="privacy" name1="Privacy" name2="Coins"></card>
     <card tc="mustard" cl="utility" name1="Utility" name2="Tokens"></card>
-  <h5>© 2019 Parker Merritt</h5>
+
   </div>
 </template>
 
